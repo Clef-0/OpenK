@@ -1,0 +1,90 @@
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\GameProject.exe
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\GameProject.pdb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\MonoGame.Framework.dll
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.dll
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.XInput.dll
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.RawInput.dll
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\MonoGame.Framework.xml
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.xml
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.XInput.xml
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.RawInput.xml
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+N:\Computer Science\Coursework\GameProject\GameProject\obj\x86\Debug\GameProject.csprojResolveAssemblyReference.cache
+N:\Computer Science\Coursework\GameProject\GameProject\obj\x86\Debug\GameProject.exe
+N:\Computer Science\Coursework\GameProject\GameProject\obj\x86\Debug\GameProject.pdb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\3D Models\Test\Cube.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\MonoGame.Extended.dll
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\GameProject.exe.config
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Fonts\Arial12.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\Cursor.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\3D Models\Player\player.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\kickloop.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\ParticleTest.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\dubloop.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\Lock.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\EnemyParticle.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Newtonsoft.Json.dll
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Effects\vignette.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\Vignette.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\Cursor_Menu.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowFrame.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowButtonExit.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowButtonOptions.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowButtonPlay.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowButtonReset.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\GameProject.exe.config
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\obj\x86\Debug\GameProject.exe
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\obj\x86\Debug\GameProject.pdb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Effects\vignette.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\3D Models\Player\player.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\3D Models\Test\Cube.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\dubloop.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\kickloop.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Fonts\Arial12.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\Cursor.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\Cursor_Menu.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\EnemyParticle.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\Lock.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\ParticleTest.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\Vignette.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowButtonExit.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowButtonOptions.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowButtonPlay.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowButtonReset.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowFrame.xnb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\GameProject.exe
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\GameProject.pdb
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\MonoGame.Extended.dll
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\Newtonsoft.Json.dll
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.RawInput.dll
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.RawInput.xml
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\niall\Desktop\GameProject\GameProject\GameProject\obj\x86\Debug\GameProject.csprojResolveAssemblyReference.cache
