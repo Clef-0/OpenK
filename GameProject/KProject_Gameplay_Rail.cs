@@ -153,7 +153,8 @@ namespace GameProject
             int R = 0;
             int G = 128;
             int B = 128;
-            GraphicsDevice.Clear(Color.FromNonPremultiplied(R, G, B, 255));
+            Color customColor = Color.FromNonPremultiplied(R, G, B, 255);
+            GraphicsDevice.Clear(Color.DarkOrange);
 
             spriteBatch.Begin(blendState: BlendState.Additive, transformMatrix: pCamera.GetViewMatrix());
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>N:/Computer Science/Coursework/GameProject/GameProject/Content/Audio/dubloop.wav</SourceFile>
-  <SourceTime>2017-01-25T09:39:03.0220282+00:00</SourceTime>
-  <DestFile>N:/Computer Science/Coursework/GameProject/GameProject/Content/bin/Windows/Audio/dubloop.xnb</DestFile>
-  <DestTime>2017-01-25T09:44:36.9961491+00:00</DestTime>
+  <SourceFile>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Audio/dubloop.wav</SourceFile>
+  <SourceTime>2017-02-01T10:56:01.3931246+00:00</SourceTime>
+  <DestFile>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/bin/Windows/Audio/dubloop.xnb</DestFile>
+  <DestTime>2017-02-01T11:01:28.1255465+00:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

@@ -4,24 +4,24 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/3D Models/Test/Cube.obj</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Fonts/Arial12.spritefont</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Textures/Cursor.png</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/3D Models/Player/player.obj</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Audio/kickloop.wav</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Textures/ParticleTest.png</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Audio/dubloop.wav</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Textures/Lock.png</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Textures/EnemyParticle.png</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Textures/Vignette.png</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Textures/Cursor_Menu.png</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Textures/WindowFrame.png</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Textures/WindowButtonExit.png</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Textures/WindowButtonOptions.png</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Textures/WindowButtonPlay.png</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Textures/WindowButtonReset.png</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/3D Models/Test/Ship.obj</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Textures/Line.png</File>
-    <File>N:/Computer Science/Coursework/GameProject/GameProject/Content/Textures/Slice.png</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/3D Models/Test/Cube.obj</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Fonts/Arial12.spritefont</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Textures/Cursor.png</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/3D Models/Player/player.obj</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Audio/kickloop.wav</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Textures/ParticleTest.png</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Audio/dubloop.wav</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Textures/Lock.png</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Textures/EnemyParticle.png</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Textures/Vignette.png</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Textures/Cursor_Menu.png</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Textures/WindowFrame.png</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Textures/WindowButtonExit.png</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Textures/WindowButtonOptions.png</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Textures/WindowButtonPlay.png</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Textures/WindowButtonReset.png</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/3D Models/Test/Ship.obj</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Textures/Line.png</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Textures/Slice.png</File>
   </SourceFiles>
 </SourceFileCollection>
