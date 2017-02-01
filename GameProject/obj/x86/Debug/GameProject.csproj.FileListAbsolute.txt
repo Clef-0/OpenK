@@ -94,3 +94,42 @@ C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.XInp
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.RawInput.xml
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\niall\Source\Repos\OpenK\GameProject\obj\x86\Debug\GameProject.csprojResolveAssemblyReference.cache
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Fonts\ScoreFont.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\arps.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\boom.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\break 1.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\break 2.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\california soul.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\chopped choir.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clank beat.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clean bass.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clean beat.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\fear is a mind killer.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\gross bass.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\intro pads.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\journey pad.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\killer.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\long journey 2.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\long journey.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\repeating arp.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\sampled break.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\dubloop.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\kickloop.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\arps.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\boom.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\break 1.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\break 2.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\california soul.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\chopped choir.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clank beat.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clean bass.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clean beat.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\fear is a mind killer.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\gross bass.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\intro pads.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\journey pad.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\killer.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\long journey 2.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\long journey.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\repeating arp.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\sampled break.wma

@@ -33,7 +33,7 @@ namespace GameProject
         private int resolutionY;
 
         // time signature
-        private int bpm = 130;
+        private int bpm = 90;
 
         private float ticksPerBeat;
         private int beatsElapsed = 0;
@@ -53,7 +53,13 @@ namespace GameProject
         ParticleEffect pEffect;
 
         // Audio
-        private SoundEffect drumLoop;
+        private SoundEffect fearDrumLoop;
+        private SoundEffect fearBassLoop;
+        private SoundEffect fearPadsLoop;
+
+        SoundEffectInstance drum;
+        SoundEffectInstance bass;
+        SoundEffectInstance pads;
 
         // 3D Models
         private static Model playerModel;
@@ -75,6 +81,7 @@ namespace GameProject
         private Texture2D vignetteTexture;
         private Vector2 cursorPosition;
         private SpriteFont Arial12;
+        private SpriteFont scoreFont;
 
         private string[] log = {"", "", "", "", ""};
         private string logEntry;
@@ -82,7 +89,7 @@ namespace GameProject
 
         private Matrix world = Matrix.CreateTranslation(new Vector3(0, 0, 0));
         private Matrix view = Matrix.CreateLookAt(new Vector3(0, 4, 10), new Vector3(0, 3, 0), Vector3.UnitY);
-        private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), 800f / 480f, 0.1f, 100f);
+        private Matrix projection;
 
         Camera2D pCamera;
 
@@ -102,6 +109,8 @@ namespace GameProject
         private int miniNodesMade = 0;
         
         private List<object> enemies = new List<object>();
+   
+        private Color areaColor = Color.FromNonPremultiplied(128, 32, 0, 255);
 
         
 
@@ -113,7 +122,7 @@ namespace GameProject
             graphics.PreferredBackBufferWidth = resolutionX;
             graphics.PreferredBackBufferHeight = resolutionY;
             graphics.IsFullScreen = true;
-            Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), (float)resolutionX / (float)resolutionY, 0.1f, 200f);
+            projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), resolutionX / resolutionY, 0.1f, 300f);
 
             Content.RootDirectory = "Content";
 
@@ -141,13 +150,16 @@ namespace GameProject
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             BoxingViewportAdapter viewportAdapter = new BoxingViewportAdapter(Window, GraphicsDevice, resolutionX, resolutionY); 
-            pCamera = new Camera2D(viewportAdapter); 
+            pCamera = new Camera2D(viewportAdapter);
 
             // Audio
-            drumLoop = Content.Load<SoundEffect>(@"Audio\dubloop");
+            fearDrumLoop = Content.Load<SoundEffect>(@"Audio\fear\clean beat");
+            fearBassLoop = Content.Load<SoundEffect>(@"Audio\fear\gross bass");
+            fearPadsLoop = Content.Load<SoundEffect>(@"Audio\fear\california soul");
 
             // Fonts
             Arial12 = Content.Load<SpriteFont>(@"Fonts\Arial12");
+            scoreFont = Content.Load<SpriteFont>(@"Fonts\ScoreFont");
 
             // 3D Models
             playerModel = this.Content.Load<Model>(@"3D Models\Player\player");
@@ -168,7 +180,11 @@ namespace GameProject
             lockTexture = Content.Load<Texture2D>(@"Textures\Lock");
             vignetteTexture = Content.Load<Texture2D>(@"Textures\Vignette");
 
-            ParticleInit(new TextureRegion2D(enemyParticleTexture)); 
+            ParticleInit(new TextureRegion2D(enemyParticleTexture));
+
+            bass = fearBassLoop.CreateInstance();
+            drum = fearDrumLoop.CreateInstance();
+            pads = fearPadsLoop.CreateInstance();
         }
 
         protected override void Update(GameTime gameTime)
@@ -214,6 +230,11 @@ namespace GameProject
                     effect.View = view;
                     effect.Projection = projection;
                     effect.EnableDefaultLighting();
+                    effect.FogEnabled = true;
+                    HslColor fogColor = new HslColor(areaColor.ToHsl().H, areaColor.ToHsl().S, 0);
+                    effect.FogColor = fogColor.ToRgb().ToVector3();
+                    effect.FogStart = 50f;
+                    effect.FogEnd = 180f;
                 }
                 mesh.Draw();
             }

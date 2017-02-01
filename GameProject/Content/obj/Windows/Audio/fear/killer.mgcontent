@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Audio/fear/killer.wav</SourceFile>
+  <SourceTime>2017-02-01T10:56:02.9399996+00:00</SourceTime>
+  <DestFile>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/bin/Windows/Audio/fear/killer.xnb</DestFile>
+  <DestTime>2017-02-01T18:50:14.1636364+00:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2016-03-30T07:36:08+01:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

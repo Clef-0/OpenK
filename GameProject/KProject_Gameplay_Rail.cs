@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using MonoGame.Extended;
 using MonoGame.Extended.Particles;
 using MonoGame.Extended.Particles.Modifiers;
@@ -23,7 +24,22 @@ namespace GameProject
     {
         private void RailGameplayUpdate(GameTime gameTime)
         {
-            bool mouseInView = true;
+            if (acknowledgedBeatsElapsed != beatsElapsed)
+            {
+                if (beatsElapsed == 4)
+                {
+                    drum.IsLooped = true;
+                    drum.Play();
+                }
+
+                if (beatsElapsed == 4)
+                {
+                    bass.IsLooped = true;
+                    bass.Play();
+                }
+            }
+
+                bool mouseInView = true;
             // mouse stuff
             if ((Mouse.GetState().X >= 0 && Mouse.GetState().X < GraphicsDevice.Viewport.Width) && (Mouse.GetState().Y >= 0 && Mouse.GetState().Y < GraphicsDevice.Viewport.Height))
             {
@@ -42,12 +58,12 @@ namespace GameProject
 
             MouseState newMouseState = Mouse.GetState();
 
-            if (beatsElapsed != acknowledgedBeatsElapsed && beatsElapsed % 4 == 0 && beatsElapsed >= 16)
+            if (beatsElapsed != acknowledgedBeatsElapsed && beatsElapsed % 8 == 0 && beatsElapsed >= 0)
             {
-                enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 5, -80)));
-                enemies.Add(new Drone(new Vector3(8 * flipMultiplier, 5, -80)));
-                enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -80)));
-                enemies.Add(new Drone(new Vector3(14 * flipMultiplier, 5, -80)));
+                enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 5, -150)));
+                enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -150)));
+                enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 5, -150)));
+                enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 5, -150)));
 
                 //switch (Rnd.Next(1, 2))
                 //{
@@ -63,7 +79,9 @@ namespace GameProject
                 //}
             }
 
-            for (int i = 0; i < enemies.Count(); i++)
+            List<int> indicesToCull = new List<int>();
+
+            for (int i = enemies.Count() - 1; i >= 0; i--)
             {
                 if (enemies[i] != null)
                 {
@@ -92,7 +110,7 @@ namespace GameProject
                             {
                                 lockedEnemies -= 1;
                             }
-                            enemies.RemoveAt(i);
+                            indicesToCull.Add(i);
                             logEntry = i + " offscreen and culled";
                             newEntry = true;
                         }
@@ -119,7 +137,7 @@ namespace GameProject
 
                 // destroy enemies on beat
 
-                for (int i = enemies.Count - 1; i >= 0; i--)
+                for (int i = enemies.Count() - 1; i >= 0; i--)
                 {
                     if (((Enemy)enemies[i]).Health == 0 && newMouseState.LeftButton == ButtonState.Released)
                     {
@@ -130,7 +148,7 @@ namespace GameProject
                     }
                 }
 
-                if (beatsElapsed % 4 == 0)
+                if (beatsElapsed % 8 == 0)
                 {
                     if (flipMultiplier == 1)
                     {
@@ -143,9 +161,15 @@ namespace GameProject
                 }
             }
 
+            foreach (int index in indicesToCull)
+            {
+                enemies.RemoveAt(index);
+            }
+
+
             // beat bar stuff
             float currentTime = DateTime.Now.Ticks - startingTime;
-            beatsElapsed = (int)Math.Truncate((Decimal)currentTime / (Decimal)ticksPerBeat);
+            beatsElapsed = (int)Math.Truncate((decimal)currentTime / (decimal)ticksPerBeat);
         }
 
         private void RailGameplayDraw(GameTime gameTime)
@@ -154,7 +178,7 @@ namespace GameProject
             int G = 128;
             int B = 128;
             Color customColor = Color.FromNonPremultiplied(R, G, B, 255);
-            GraphicsDevice.Clear(Color.DarkOrange);
+            GraphicsDevice.Clear(areaColor);
 
             spriteBatch.Begin(blendState: BlendState.Additive, transformMatrix: pCamera.GetViewMatrix());
 
@@ -205,13 +229,12 @@ namespace GameProject
 
                 if (beatsElapsed % 4 == 0)
                 {
-                    projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45) / ((tickScale[ticksElapsedSinceBeat] - 1) * 2 + 1), 800f / 480f, 0.1f, 100f);
+                    projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45) / ((tickScale[ticksElapsedSinceBeat] - 1) * 1.1f + 1), resolutionX / resolutionY, 0.1f, 300f);
                 }
             }
 
             if ((acknowledgedBeatsElapsed != beatsElapsed && beatsElapsed % 16 == 0))
             {
-                drumLoop.Play();
                 world.Scale = new Vector3(0.96f, 0.96f, 0.96f);
             }
 
@@ -219,7 +242,7 @@ namespace GameProject
 
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
-            DrawModel(playerModel, world * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player
+            DrawModel(playerModel, world * Matrix.CreateScale(new Vector3(0.5f, 1f, 1f)) * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player
 
             world.Scale = new Vector3(1);
 
@@ -242,7 +265,7 @@ namespace GameProject
 
             GraphicsDevice.DepthStencilState = DepthStencilState.None;
 
-            DrawModel(playerModel, world * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player
+            DrawModel(playerModel, world * Matrix.CreateScale(new Vector3(0.5f, 1f, 1f)) * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player 
 
             spriteBatch.Draw(cursorTexture, cursorPosition, Color.White);
 

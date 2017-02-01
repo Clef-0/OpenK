@@ -20,7 +20,7 @@ namespace GameProject
     abstract class Enemy
     {
         public Model Model { get; set; }
-        public Vector3 Position { get; private set; }
+        public Vector3 Position { get; protected set; }
         public Matrix WorldMatrix { get; set; }
         public int Health { get; protected set; }
         protected decimal Velocity;
@@ -44,6 +44,7 @@ namespace GameProject
             float actualVelocity = (float)(Velocity / 5);
             if (Position.Z > -40)
             {
+                //actualVelocity = (float)(Velocity / 5) * (80 - (Math.Abs(Position.Z) * 2)) / 40;
                 actualVelocity = (float)(Velocity / 5) * (80 - Math.Abs(Position.Z)) / 40;
             }
 
@@ -56,7 +57,7 @@ namespace GameProject
         public Drone(Vector3 Position) : base(Position)
         {
             Health = 1;
-            Velocity = 2M;
+            Velocity = 2.5M;
             Model = KProject.droneModel;
         }
     }
@@ -66,7 +67,7 @@ namespace GameProject
         public Sentinel(Vector3 Position) : base(Position)
         {
             Health = 2;
-            Velocity = 4M;
+            Velocity = 3.5M;
             Model = KProject.sentinelModel;
         }
     }
@@ -76,7 +77,7 @@ namespace GameProject
         public Colonel(Vector3 Position) : base(Position)
         {
             Health = 2;
-            Velocity = 5M;
+            Velocity = 4.5M;
             Model = KProject.colonelModel;
         }
     }

@@ -245,3 +245,117 @@
 /processorParam:TextureFormat=Color
 /build:Textures/Slice.png
 
+#begin Fonts/ScoreFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:Fonts/ScoreFont.spritefont
+
+#begin Audio/fear/arps.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/arps.wav
+
+#begin Audio/fear/boom.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/boom.wav
+
+#begin Audio/fear/break 1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/break 1.wav
+
+#begin Audio/fear/break 2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/break 2.wav
+
+#begin Audio/fear/california soul.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/california soul.wav
+
+#begin Audio/fear/chopped choir.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/chopped choir.wav
+
+#begin Audio/fear/clank beat.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/clank beat.wav
+
+#begin Audio/fear/clean bass.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/clean bass.wav
+
+#begin Audio/fear/clean beat.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/clean beat.wav
+
+#begin Audio/fear/fear is a mind killer.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/fear is a mind killer.wav
+
+#begin Audio/fear/gross bass.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/gross bass.wav
+
+#begin Audio/fear/intro pads.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/intro pads.wav
+
+#begin Audio/fear/journey pad.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/journey pad.wav
+
+#begin Audio/fear/killer.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/killer.wav
+
+#begin Audio/fear/long journey 2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/long journey 2.wav
+
+#begin Audio/fear/long journey.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/long journey.wav
+
+#begin Audio/fear/repeating arp.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/repeating arp.wav
+
+#begin Audio/fear/sampled break.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/fear/sampled break.wav
+

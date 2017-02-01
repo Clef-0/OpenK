@@ -3,7 +3,7 @@
   <SourceFile>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Audio/dubloop.wav</SourceFile>
   <SourceTime>2017-02-01T10:56:01.3931246+00:00</SourceTime>
   <DestFile>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/bin/Windows/Audio/dubloop.xnb</DestFile>
-  <DestTime>2017-02-01T11:01:28.1255465+00:00</DestTime>
+  <DestTime>2017-02-01T18:50:00.3267223+00:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
