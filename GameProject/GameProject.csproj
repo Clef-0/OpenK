@@ -46,6 +46,7 @@
     <Compile Include="KProject.cs" />
     <Compile Include="KProject_Gameplay_Rail.cs" />
     <Compile Include="KProject_Menu.cs" />
+    <Compile Include="KProject_Nodes.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="KProject_Particles.cs" />
     <Compile Include="KProject_Raycasting.cs" />

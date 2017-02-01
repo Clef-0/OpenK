@@ -39,6 +39,8 @@ namespace GameProject
             if (mouseInView && Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
                 currentState = GameState.Rail;
+                startingTime = DateTime.Now.Ticks;
+                cursorTexture = cursorRail;
             }
         }
 
@@ -46,7 +48,7 @@ namespace GameProject
         {
             GraphicsDevice.Clear(Color.FromNonPremultiplied(0,128,128,255));
 
-            DrawModel(playerModel, playerPos * Matrix.CreateRotationY((float)Math.PI) * Matrix.CreateTranslation(new Vector3(0, 2, 0)), camera, projection);
+            DrawModel(playerModel, world * Matrix.CreateRotationY((float)Math.PI) * Matrix.CreateTranslation(new Vector3(0, 2, 0)), view, projection);
 
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
             spriteBatch.Draw(frameTexture, new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 - 100), Color.White);
@@ -55,6 +57,10 @@ namespace GameProject
             spriteBatch.Draw(buttonOptionsTexture, new Vector2(GraphicsDevice.Viewport.Width / 5 + 10, GraphicsDevice.Viewport.Height / 2 - 100 + 125), Color.White);
             spriteBatch.Draw(buttonExitTexture, new Vector2(GraphicsDevice.Viewport.Width / 5 + 10, GraphicsDevice.Viewport.Height / 2 - 100 + 150), Color.White);
             spriteBatch.Draw(cursorTexture, cursorPosition, Color.White);
+            spriteBatch.DrawString(Arial12, rootNode.Company, new Vector2(5, 120), Color.White);
+            spriteBatch.DrawString(Arial12, rootNode.Country, new Vector2(5, 140), Color.White);
+            spriteBatch.DrawString(Arial12, rootNode.Address, new Vector2(5, 160), Color.White);
+            DrawTree(rootNode);
             spriteBatch.End();
         }
     }

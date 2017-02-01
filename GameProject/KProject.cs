@@ -80,8 +80,8 @@ namespace GameProject
         private string logEntry;
         private bool newEntry = false;
 
-        private Matrix playerPos = Matrix.CreateTranslation(new Vector3(0, 0, 0));
-        private Matrix camera = Matrix.CreateLookAt(new Vector3(0, 4, 10), new Vector3(0, 3, 0), Vector3.UnitY);
+        private Matrix world = Matrix.CreateTranslation(new Vector3(0, 0, 0));
+        private Matrix view = Matrix.CreateLookAt(new Vector3(0, 4, 10), new Vector3(0, 3, 0), Vector3.UnitY);
         private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), 800f / 480f, 0.1f, 100f);
 
         Camera2D pCamera;
@@ -91,37 +91,15 @@ namespace GameProject
 
         private int flipMultiplier = -1;
 
-        Node rootNode = new Node {
-            Type = Node.NodeType.Cabal,
-            Company = "TestCompany",
-            Country = "TestCountry",
-            Address = "000.000.000.000",
-            Parent = null,
-            Children =
-            {
-                new Node
-                {
-                    Type = Node.NodeType.Cabal,
-                    Company = "TestCompany2",
-                    Country = "TestCountry2",
-                    Address = "000.000.000.000"
-                },
-                new Node
-                {
-                    Type = Node.NodeType.Cabal,
-                    Company = "TestCompany3",
-                    Country = "TestCountry3",
-                    Address = "000.000.000.000"
-                },
-                new Node
-                {
-                    Type = Node.NodeType.Cabal,
-                    Company = "TestCompany4",
-                    Country = "TestCountry4",
-                    Address = "000.000.000.000"
-                }
-            }
-        };
+        Node rootNode;
+
+        private const int railNodesToMake = 30;
+        private const int cabalNodesToMake = 10;
+        private const int miniNodesToMake = 10;
+        private const int totalNodesToMake = railNodesToMake + cabalNodesToMake + miniNodesToMake;
+        private int railNodesMade = 1;
+        private int cabalNodesMade = 0;
+        private int miniNodesMade = 0;
         
         private List<object> enemies = new List<object>();
 
@@ -141,6 +119,15 @@ namespace GameProject
 
             ticksPerBeat = ((float)60 / (float)bpm) * (float)10000000;
 
+            rootNode = new Node
+            {
+                Type = Node.NodeType.Rail,
+                Company = NameGenerate(1),
+                Country = NameGenerate(2),
+                Address = NameGenerate(3)
+            };
+
+            CreateChildren(rootNode, 3, 4, 0);
         }
 
         protected override void Initialize()
@@ -164,12 +151,12 @@ namespace GameProject
 
             // 3D Models
             playerModel = this.Content.Load<Model>(@"3D Models\Player\player");
-            droneModel = this.Content.Load<Model>(@"3D Models\Test\Cube");
+            droneModel = this.Content.Load<Model>(@"3D Models\Test\Ship");
             sentinelModel = this.Content.Load<Model>(@"3D Models\Test\Cube");
             colonelModel = this.Content.Load<Model>(@"3D Models\Test\Cube");
 
             // Textures
-            enemyParticleTexture = Content.Load<Texture2D>(@"Textures\EnemyParticle");
+            enemyParticleTexture = Content.Load<Texture2D>(@"Textures\Slice");
             frameTexture = Content.Load<Texture2D>(@"Textures\WindowFrame");
             buttonPlayTexture = Content.Load<Texture2D>(@"Textures\WindowButtonPlay");
             buttonResetTexture = Content.Load<Texture2D>(@"Textures\WindowButtonReset");

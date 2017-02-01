@@ -41,10 +41,10 @@ namespace GameProject
 
         public void FlyTowardsCamera()
         {
-            float actualVelocity = 10;
-            if (Position.Z > -50)
+            float actualVelocity = (float)(Velocity / 5);
+            if (Position.Z > -40)
             {
-                actualVelocity = (float)(Velocity / 5);
+                actualVelocity = (float)(Velocity / 5) * (80 - Math.Abs(Position.Z)) / 40;
             }
 
             Position = new Vector3(Position.X, Position.Y, Position.Z + actualVelocity);

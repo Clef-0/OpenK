@@ -31,10 +31,10 @@ namespace GameProject
                      { 
                          Parameters = new ParticleReleaseParameters 
                          { 
-                             Speed = new Range<float>(1f, 500f), 
-                             Quantity = 100, 
-                             Rotation = new Range<float>(-1f, 1f), 
-                             Scale = new Range<float>(30.0f, 40.0f),
+                             Speed = new Range<float>(0f, 0f), 
+                             Quantity = 1, 
+                             Rotation = new Range<float>(-(float)Math.PI, (float)Math.PI), 
+                             Scale = 400.0f
                          }, 
                          Modifiers = new IModifier[] 
                          { 
@@ -42,12 +42,13 @@ namespace GameProject
                              { 
                                  Interpolators = new IInterpolator[] 
                                  { 
-                                     new ColorInterpolator { InitialColor = new HslColor(1f, 1f, 1f), FinalColor = new HslColor(0.9f, 0.9f, 1f) } 
+                                     new ColorInterpolator { InitialColor = new HslColor(1f, 1f, 1f), FinalColor = new HslColor(0f, 0f, 1f) },
+                                     new ScaleInterpolator { StartValue = new Vector2(400.0f, 100.0f), EndValue = new Vector2(0.0f, 4000.0f) },
+                                     new OpacityInterpolator { StartValue = 0.01f, EndValue = 255f }
                                  } 
                              }, 
-                             new RotationModifier { RotationRate = -2.1f }, 
                              new RectangleContainerModifier {  Width = resolutionX, Height = resolutionY }, 
-                             new LinearGravityModifier { Direction = Vector2.UnitY, Strength = 300f } 
+                             new LinearGravityModifier { Direction = Vector2.UnitY, Strength = 0f } 
                          }
                      } 
                  }

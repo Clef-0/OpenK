@@ -15,7 +15,6 @@ namespace GameProject
 
         // instance properties
 
-        public Node Parent { get; set; }
         public List<Node> Children { get; set; }
         public NodeType Type { get; set; }
         public string Company { get; set; }
@@ -30,7 +29,6 @@ namespace GameProject
         public Node()
         {
             this.Children = new List<Node>();
-            this.Completed = false;
 
             Console.WriteLine("new node instance");
         }

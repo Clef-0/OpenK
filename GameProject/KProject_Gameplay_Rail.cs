@@ -74,7 +74,7 @@ namespace GameProject
                         if (Intersects(new Vector2(mouseX, mouseY), // mouse position
                             ((Enemy)enemies[i]).Model, // enemy model
                             ((Enemy)enemies[i]).WorldMatrix, // enemy position
-                            camera,
+                            view,
                             projection,
                             this.GraphicsDevice.Viewport) && ((Enemy)enemies[i]).Health > 0 && lockedEnemies < 8)
                         {
@@ -104,7 +104,7 @@ namespace GameProject
             offsetY = (mouseY - ((float)GraphicsDevice.Viewport.Height / 2)) / 500;
 
             //tilt camera with mouse move
-            camera = Matrix.CreateLookAt(new Vector3(0, 4, 10), new Vector3(offsetX, 3, offsetY), Vector3.UnitY);
+            view = Matrix.CreateLookAt(new Vector3(0, 4, 10), new Vector3(offsetX, 3, offsetY), Vector3.UnitY);
 
             oldMouseState = newMouseState;
 
@@ -123,7 +123,7 @@ namespace GameProject
                 {
                     if (((Enemy)enemies[i]).Health == 0 && newMouseState.LeftButton == ButtonState.Released)
                     {
-                        Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).Position, projection, camera, playerPos);
+                        Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).Position, projection, view, world);
                         pEffect.Trigger(new Vector2(pos.X, pos.Y));
                         enemies.RemoveAt(i);
                         lockedEnemies = 0;
@@ -150,9 +150,12 @@ namespace GameProject
 
         private void RailGameplayDraw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.DarkOrange);
+            int R = 0;
+            int G = 128;
+            int B = 128;
+            GraphicsDevice.Clear(Color.FromNonPremultiplied(R, G, B, 255));
 
-            spriteBatch.Begin(blendState: BlendState.AlphaBlend, transformMatrix: pCamera.GetViewMatrix());
+            spriteBatch.Begin(blendState: BlendState.Additive, transformMatrix: pCamera.GetViewMatrix());
 
             spriteBatch.Draw(pEffect);
 
@@ -172,11 +175,11 @@ namespace GameProject
                 log[4] = logEntry;
             }
 
-            spriteBatch.DrawString(Arial12, log[4], new Vector2(5, 200), Color.White);
-            spriteBatch.DrawString(Arial12, log[3], new Vector2(5, 180), Color.White);
-            spriteBatch.DrawString(Arial12, log[2], new Vector2(5, 160), Color.White);
-            spriteBatch.DrawString(Arial12, log[1], new Vector2(5, 140), Color.White);
             spriteBatch.DrawString(Arial12, log[0], new Vector2(5, 120), Color.White);
+            spriteBatch.DrawString(Arial12, log[1], new Vector2(5, 140), Color.White);
+            spriteBatch.DrawString(Arial12, log[2], new Vector2(5, 160), Color.White);
+            spriteBatch.DrawString(Arial12, log[3], new Vector2(5, 180), Color.White);
+            spriteBatch.DrawString(Arial12, log[4], new Vector2(5, 200), Color.White);
 
 
             // CAMERA SCALE
@@ -197,7 +200,7 @@ namespace GameProject
 
             if (tickScale.ContainsKey(ticksElapsedSinceBeat))
             {
-                playerPos.Scale = new Vector3(tickScale[ticksElapsedSinceBeat]);
+                world.Scale = new Vector3(tickScale[ticksElapsedSinceBeat]);
 
                 if (beatsElapsed % 4 == 0)
                 {
@@ -208,22 +211,22 @@ namespace GameProject
             if ((acknowledgedBeatsElapsed != beatsElapsed && beatsElapsed % 16 == 0))
             {
                 drumLoop.Play();
-                playerPos.Scale = new Vector3(0.96f, 0.96f, 0.96f);
+                world.Scale = new Vector3(0.96f, 0.96f, 0.96f);
             }
 
             // 3D DRAWING
 
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
-            DrawModel(playerModel, playerPos * Matrix.CreateRotationY(-offsetX / 4), camera, projection); // draw player
+            DrawModel(playerModel, world * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player
 
-            playerPos.Scale = new Vector3(1);
+            world.Scale = new Vector3(1);
 
             foreach (Enemy enemy in enemies)
             {
                 if (enemy != null)
                 {
-                    DrawModel(enemy.Model, enemy.WorldMatrix, camera, projection);
+                    DrawModel(enemy.Model, enemy.WorldMatrix, view, projection);
                 }
             }
 
@@ -231,10 +234,14 @@ namespace GameProject
             {
                 if (((Enemy)enemies[i]).Health == 0 && ((Enemy)enemies[i]).Position.Z < 10)
                 {
-                    Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).Position, projection, camera, playerPos);
+                    Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).Position, projection, view, world);
                     spriteBatch.Draw(lockTexture, new Vector2(pos.X - (lockTexture.Width / 2), pos.Y - (lockTexture.Height / 2)), Color.White);
                 }
             }
+
+            GraphicsDevice.DepthStencilState = DepthStencilState.None;
+
+            DrawModel(playerModel, world * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player
 
             spriteBatch.Draw(cursorTexture, cursorPosition, Color.White);
 
