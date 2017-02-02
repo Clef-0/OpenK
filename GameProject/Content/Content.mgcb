@@ -359,3 +359,9 @@
 /processorParam:Quality=Best
 /build:Audio/fear/sampled break.wav
 
+#begin Audio/snare.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/snare.wav
+

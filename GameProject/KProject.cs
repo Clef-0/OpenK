@@ -45,7 +45,10 @@ namespace GameProject
         private MouseState oldMouseState;
         private int mouseX;
         private int mouseY;
+
         private int lockedEnemies = 0;
+
+        private int nodeScore = 0;
 
         public static readonly Random Rnd = new Random((int)DateTime.Now.Ticks);
 
@@ -56,6 +59,9 @@ namespace GameProject
         private SoundEffect fearDrumLoop;
         private SoundEffect fearBassLoop;
         private SoundEffect fearPadsLoop;
+
+        private SoundEffect boomDrum;
+        private SoundEffect snareDrum;
 
         SoundEffectInstance drum;
         SoundEffectInstance bass;
@@ -110,7 +116,7 @@ namespace GameProject
         
         private List<object> enemies = new List<object>();
    
-        private Color areaColor = Color.FromNonPremultiplied(128, 32, 0, 255);
+        private Color areaColor = Color.FromNonPremultiplied(160, 64, 0, 255);
 
         
 
@@ -156,6 +162,8 @@ namespace GameProject
             fearDrumLoop = Content.Load<SoundEffect>(@"Audio\fear\clean beat");
             fearBassLoop = Content.Load<SoundEffect>(@"Audio\fear\gross bass");
             fearPadsLoop = Content.Load<SoundEffect>(@"Audio\fear\california soul");
+            boomDrum = Content.Load<SoundEffect>(@"Audio\fear\boom");
+            snareDrum = Content.Load<SoundEffect>(@"Audio\snare");
 
             // Fonts
             Arial12 = Content.Load<SpriteFont>(@"Fonts\Arial12");

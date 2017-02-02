@@ -133,3 +133,4 @@ C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audi
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\long journey.wma
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\repeating arp.wma
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\sampled break.wma
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\snare.xnb

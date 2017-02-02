@@ -24,6 +24,7 @@ namespace GameProject
         public Matrix WorldMatrix { get; set; }
         public int Health { get; protected set; }
         protected decimal Velocity;
+        public int Points { get; protected set; }
 
         public Enemy(Vector3 Position)
         {
@@ -59,6 +60,7 @@ namespace GameProject
             Health = 1;
             Velocity = 2.5M;
             Model = KProject.droneModel;
+            Points = 10;
         }
     }
 
@@ -69,6 +71,7 @@ namespace GameProject
             Health = 2;
             Velocity = 3.5M;
             Model = KProject.sentinelModel;
+            Points = 20;
         }
     }
 
@@ -79,6 +82,7 @@ namespace GameProject
             Health = 2;
             Velocity = 4.5M;
             Model = KProject.colonelModel;
+            Points = 30;
         }
     }
 }

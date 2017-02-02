@@ -34,6 +34,7 @@ namespace GameProject
 
                 if (beatsElapsed == 4)
                 {
+                    pads.Play();
                     bass.IsLooped = true;
                     bass.Play();
                 }
@@ -80,7 +81,8 @@ namespace GameProject
             }
 
             List<int> indicesToCull = new List<int>();
-
+            bool somethingLocked = false;
+            
             for (int i = enemies.Count() - 1; i >= 0; i--)
             {
                 if (enemies[i] != null)
@@ -100,6 +102,7 @@ namespace GameProject
                             newEntry = true;
                             ((Enemy)enemies[i]).Injure(1);
                             lockedEnemies += 1;
+                            somethingLocked = true;
                         }
                     }
                     if (enemies.ElementAtOrDefault(i) != null)
@@ -109,6 +112,7 @@ namespace GameProject
                             if (((Enemy)enemies[i]).Health == 0)
                             {
                                 lockedEnemies -= 1;
+                                nodeScore += ((Enemy)enemies[i]).Points;
                             }
                             indicesToCull.Add(i);
                             logEntry = i + " offscreen and culled";
@@ -116,6 +120,14 @@ namespace GameProject
                         }
                     }
                 }
+            }
+            if (somethingLocked == true)
+            {
+                SoundEffectInstance inst = snareDrum.CreateInstance();
+                inst.Volume /= 3;
+                inst.Pitch *= 10;
+                inst.Play();
+
             }
 
             offsetX = (mouseX - ((float)GraphicsDevice.Viewport.Width / 2)) / 1000;
@@ -137,15 +149,22 @@ namespace GameProject
 
                 // destroy enemies on beat
 
+                bool somethingDestroyed = false;
                 for (int i = enemies.Count() - 1; i >= 0; i--)
                 {
                     if (((Enemy)enemies[i]).Health == 0 && newMouseState.LeftButton == ButtonState.Released)
                     {
                         Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).Position, projection, view, world);
                         pEffect.Trigger(new Vector2(pos.X, pos.Y));
+                        nodeScore += ((Enemy)enemies[i]).Points;
                         enemies.RemoveAt(i);
                         lockedEnemies = 0;
+                        somethingDestroyed = true;
                     }
+                }
+                if (somethingDestroyed == true)
+                {
+                    boomDrum.Play();
                 }
 
                 if (beatsElapsed % 8 == 0)
@@ -268,6 +287,7 @@ namespace GameProject
             DrawModel(playerModel, world * Matrix.CreateScale(new Vector3(0.5f, 1f, 1f)) * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player 
 
             spriteBatch.Draw(cursorTexture, cursorPosition, Color.White);
+            spriteBatch.DrawString(scoreFont, nodeScore.ToString(), new Vector2(GraphicsDevice.Viewport.Width - scoreFont.MeasureString(nodeScore.ToString()).X - 5, GraphicsDevice.Viewport.Height - scoreFont.MeasureString(nodeScore.ToString()).Y + 15), Color.White);
 
             spriteBatch.End();
         }
