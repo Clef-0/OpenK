@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace GameProject
 {
+    enum NodeType { Rail, Cabal, Road, Hell, Net };
+
     class Node
     {
-        // static properties
-
-        public enum NodeType { Rail, Cabal, Road, Hell, Net };
-
-
         // instance properties
 
         public List<Node> Children { get; set; }

@@ -38,7 +38,7 @@ namespace GameProject
                             {
                                 parent.Children.Add(new Node
                                 {
-                                    Type = Node.NodeType.Rail,
+                                    Type = NodeType.Rail,
                                     Company = NameGenerate(1),
                                     Country = NameGenerate(2),
                                     Address = NameGenerate(3)
@@ -52,7 +52,7 @@ namespace GameProject
                             {
                                 parent.Children.Add(new Node
                                 {
-                                    Type = Node.NodeType.Cabal,
+                                    Type = NodeType.Cabal,
                                     Company = NameGenerate(1),
                                     Country = NameGenerate(2),
                                     Address = NameGenerate(3)
@@ -69,7 +69,7 @@ namespace GameProject
                                     case 3:
                                         parent.Children.Add(new Node
                                         {
-                                            Type = Node.NodeType.Hell,
+                                            Type = NodeType.Hell,
                                             Company = NameGenerate(1),
                                             Country = NameGenerate(2),
                                             Address = NameGenerate(3)
@@ -78,7 +78,7 @@ namespace GameProject
                                     case 4:
                                         parent.Children.Add(new Node
                                         {
-                                            Type = Node.NodeType.Net,
+                                            Type = NodeType.Net,
                                             Company = NameGenerate(1),
                                             Country = NameGenerate(2),
                                             Address = NameGenerate(3)
@@ -87,7 +87,7 @@ namespace GameProject
                                     case 5:
                                         parent.Children.Add(new Node
                                         {
-                                            Type = Node.NodeType.Road,
+                                            Type = NodeType.Road,
                                             Company = NameGenerate(1),
                                             Country = NameGenerate(2),
                                             Address = NameGenerate(3)
@@ -158,36 +158,22 @@ namespace GameProject
             return "";
         }
 
-        private void DrawTree(Node startingNode)
-        {
-        //    spriteBatch.DrawString(Arial12, rootNode.Company, new Vector2(5, 120), Color.White);
-        //    //DrawBranch();
-        //}
-
-        //void DrawLine(SpriteBatch sb, Vector2 start, Vector2 end)
-        //{
-        //    Vector2 edge = end - start;
-        //    float angle =
-        //        (float)Math.Atan2(edge.Y, edge.X);
-
-
-        //    sb.Draw(t, new Rectangle(
-        //            (int)start.X,
-        //            (int)start.Y,
-        //            (int)edge.Length(), //sb will strech the texture to fill this rectangle
-        //            1), //width of line, change this to make thicker line
-        //        null,
-        //        Color.Red, //colour of line
-        //        angle,     //angle of line (calulated above)
-        //        new Vector2(0, 0), // point in line about which to rotate
-        //        SpriteEffects.None,
-        //        0);
-
-        }
-
         static string RandomStringFromArray(string[] strings)
         {
             return strings[random.Next(0, strings.Count())];
+        }
+
+        private void DrawTree(Node startingNode)
+        {
+            spriteBatch.DrawString(Arial12, rootNode.Company, new Vector2(700 , 300), Color.White);
+            DrawLine(spriteBatch, new Vector2(700,300), new Vector2(1061,800));
+        }
+
+        void DrawLine(SpriteBatch spriteBatch, Vector2 start, Vector2 end)
+        {
+            Vector2 edge = end - start;
+            float angle = (float)Math.Atan2(edge.Y, edge.X);
+            spriteBatch.Draw(linePixel, new Rectangle((int)start.X, (int)start.Y, (int)edge.Length(), 2), null, Color.White, angle, new Vector2(0, 0), SpriteEffects.None, 0);
         }
     }
 }

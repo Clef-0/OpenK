@@ -43,5 +43,8 @@
     <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Audio/fear/repeating arp.wav</File>
     <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Audio/fear/sampled break.wav</File>
     <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Audio/snare.wav</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Textures/SliceLock.png</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Fonts/Bender.spritefont</File>
+    <File>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/3D Models/Env/Terrain.obj</File>
   </SourceFiles>
 </SourceFileCollection>

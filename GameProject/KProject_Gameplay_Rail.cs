@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GameProject
@@ -26,21 +27,55 @@ namespace GameProject
         {
             if (acknowledgedBeatsElapsed != beatsElapsed)
             {
-                if (beatsElapsed == 4)
+                if (beatsElapsed >= 16 && beatsElapsed % 4 == 0 && beatsElapsed < 80 && beatsElapsed != 32)
                 {
-                    drum.IsLooped = true;
-                    drum.Play();
+                    SoundEffectInstance drumInst = drum.CreateInstance();
+                    drumInst.Volume /= 2.5f;
+                    drumInst.Play();
                 }
 
-                if (beatsElapsed == 4)
+                if (beatsElapsed >= 0 && beatsElapsed % 16 == 0 && beatsElapsed < 32)
                 {
-                    pads.Play();
-                    bass.IsLooped = true;
-                    bass.Play();
+                    SoundEffectInstance padsInst = pads.CreateInstance();
+                    padsInst.Volume /= 3f;
+                    padsInst.Play();
+                }
+
+                if (beatsElapsed == 32)
+                {
+                    SoundEffectInstance journeyInst = journey.CreateInstance();
+                    journeyInst.Volume /= 3f;
+                    journeyInst.Play();
+                }
+
+                if (beatsElapsed == 80)
+                {
+                    SoundEffectInstance break1Inst = break1.CreateInstance();
+                    break1Inst.Volume /= 3f;
+                    break1Inst.Play();
+                }
+
+                if (beatsElapsed >= 36 && (beatsElapsed - 4) % 32 == 0 && beatsElapsed < 84)
+                {
+                    SoundEffectInstance bassInst = bass.CreateInstance();
+                    bassInst.Volume /= 3f;
+                    bassInst.Play();
+                }
+
+                if (beatsElapsed >= 84 && (beatsElapsed + 12) % 32 == 0)
+                {
+                    SoundEffectInstance soulInst = soul.CreateInstance();
+                    soulInst.Volume /= 3f;
+                    soulInst.Play();
                 }
             }
 
-                bool mouseInView = true;
+            if (beatsElapsed == 35)
+            {
+                zoomFactor = 1f + (ticksElapsedSinceBeat / 100f);
+            }
+
+            bool mouseInView = true;
             // mouse stuff
             if ((Mouse.GetState().X >= 0 && Mouse.GetState().X < GraphicsDevice.Viewport.Width) && (Mouse.GetState().Y >= 0 && Mouse.GetState().Y < GraphicsDevice.Viewport.Height))
             {
@@ -59,12 +94,16 @@ namespace GameProject
 
             MouseState newMouseState = Mouse.GetState();
 
-            if (beatsElapsed != acknowledgedBeatsElapsed && beatsElapsed % 8 == 0 && beatsElapsed >= 0)
+
+            // enemy spawners
+            if (beatsElapsed != acknowledgedBeatsElapsed && beatsElapsed % 4 == 0 && beatsElapsed > 0)
             {
-                enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 5, -150)));
-                enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -150)));
-                enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 5, -150)));
-                enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 5, -150)));
+                enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.Straight));
+                enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveIn));
+                if (nodeScore >= 1000)
+                {
+                    enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                }
 
                 //switch (Rnd.Next(1, 2))
                 //{
@@ -87,8 +126,11 @@ namespace GameProject
             {
                 if (enemies[i] != null)
                 {
-                    ((Enemy)enemies[i]).FlyTowardsCamera();
-                    ((Enemy)enemies[i]).WorldMatrix = Matrix.CreateTranslation(((Enemy)enemies[i]).Position);
+                    ((Enemy)enemies[i]).Update();
+                    ((Enemy)enemies[i]).WorldMatrix = Matrix.CreateTranslation(((Enemy)enemies[i]).Position)
+                        * Matrix.CreateRotationX(((Enemy)enemies[i]).Rotation.X)
+                        * Matrix.CreateRotationY(((Enemy)enemies[i]).Rotation.Y)
+                        * Matrix.CreateRotationZ(((Enemy)enemies[i]).Rotation.Z);
                     if (mouseInView && newMouseState.LeftButton == ButtonState.Pressed)
                     {
                         if (Intersects(new Vector2(mouseX, mouseY), // mouse position
@@ -115,8 +157,8 @@ namespace GameProject
                                 nodeScore += ((Enemy)enemies[i]).Points;
                             }
                             indicesToCull.Add(i);
-                            logEntry = i + " offscreen and culled";
-                            newEntry = true;
+                            //logEntry = i + " offscreen and culled";
+                            //newEntry = true;
                         }
                     }
                 }
@@ -124,8 +166,8 @@ namespace GameProject
             if (somethingLocked == true)
             {
                 SoundEffectInstance inst = snareDrum.CreateInstance();
-                inst.Volume /= 3;
-                inst.Pitch *= 10;
+                inst.Volume /= 10f;
+                inst.Pitch *= 10f;
                 inst.Play();
 
             }
@@ -143,28 +185,33 @@ namespace GameProject
             if (acknowledgedBeatsElapsed != beatsElapsed)
             {
                 acknowledgedBeatsElapsed = beatsElapsed;
-                logEntry = Convert.ToString(beatsElapsed);
-                newEntry = true;
+                //logEntry = Convert.ToString(beatsElapsed);
+                //newEntry = true;
                 ticksElapsedSinceBeat = 0;
 
                 // destroy enemies on beat
 
-                bool somethingDestroyed = false;
+                int enemiesDestroyed = 0;
+                int enemiesDestroyedScore = 0;
                 for (int i = enemies.Count() - 1; i >= 0; i--)
                 {
                     if (((Enemy)enemies[i]).Health == 0 && newMouseState.LeftButton == ButtonState.Released)
                     {
-                        Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).Position, projection, view, world);
+                        Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).Position - new Vector3(0,0,((Enemy)enemies[i]).Model.Meshes[0].BoundingSphere.Radius), projection, view, ((Enemy)enemies[i]).WorldMatrix);
                         pEffect.Trigger(new Vector2(pos.X, pos.Y));
-                        nodeScore += ((Enemy)enemies[i]).Points;
-                        enemies.RemoveAt(i);
+                        enemiesDestroyedScore += ((Enemy)enemies[i]).Points;
+                        indicesToCull.Add(i);
                         lockedEnemies = 0;
-                        somethingDestroyed = true;
+                        enemiesDestroyed++;
                     }
                 }
-                if (somethingDestroyed == true)
+                if (enemiesDestroyed > 0)
                 {
-                    boomDrum.Play();
+                    SoundEffectInstance boomInst = boomDrum.CreateInstance();
+                    boomInst.Volume /= 3f;
+                    boomInst.Play();
+                    enemiesDestroyedScore += (enemiesDestroyed - 1) * 5;
+                    nodeScore += enemiesDestroyedScore;
                 }
 
                 if (beatsElapsed % 8 == 0)
@@ -187,8 +234,8 @@ namespace GameProject
 
 
             // beat bar stuff
-            float currentTime = DateTime.Now.Ticks - startingTime;
-            beatsElapsed = (int)Math.Truncate((decimal)currentTime / (decimal)ticksPerBeat);
+            float currentTime = timer.Now.Ticks - startingTime;
+            beatsElapsed = (int)Math.Truncate((decimal)currentTime / (decimal)ticksPerBeat) - 1;
         }
 
         private void RailGameplayDraw(GameTime gameTime)
@@ -197,7 +244,7 @@ namespace GameProject
             int G = 128;
             int B = 128;
             Color customColor = Color.FromNonPremultiplied(R, G, B, 255);
-            GraphicsDevice.Clear(areaColor);
+            GraphicsDevice.Clear(currentNodeColor);
 
             spriteBatch.Begin(blendState: BlendState.Additive, transformMatrix: pCamera.GetViewMatrix());
 
@@ -207,7 +254,7 @@ namespace GameProject
 
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
 
-            spriteBatch.Draw(vignetteTexture, new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height), Color.White);
+            spriteBatch.Draw(vignetteTexture, new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height), Color.Black);
 
             if (newEntry)
             {
@@ -219,11 +266,11 @@ namespace GameProject
                 log[4] = logEntry;
             }
 
-            spriteBatch.DrawString(Arial12, log[0], new Vector2(5, 120), Color.White);
-            spriteBatch.DrawString(Arial12, log[1], new Vector2(5, 140), Color.White);
-            spriteBatch.DrawString(Arial12, log[2], new Vector2(5, 160), Color.White);
-            spriteBatch.DrawString(Arial12, log[3], new Vector2(5, 180), Color.White);
-            spriteBatch.DrawString(Arial12, log[4], new Vector2(5, 200), Color.White);
+            spriteBatch.DrawString(menuFont, log[0], new Vector2(5, 120), Color.FromNonPremultiplied(255, 255, 255, 105));
+            spriteBatch.DrawString(menuFont, log[1], new Vector2(5, 140), Color.FromNonPremultiplied(255, 255, 255, 125));
+            spriteBatch.DrawString(menuFont, log[2], new Vector2(5, 160), Color.FromNonPremultiplied(255, 255, 255, 145));
+            spriteBatch.DrawString(menuFont, log[3], new Vector2(5, 180), Color.FromNonPremultiplied(255, 255, 255, 165));
+            spriteBatch.DrawString(menuFont, log[4], new Vector2(5, 200), Color.FromNonPremultiplied(255, 255, 255, 255));
 
 
             // CAMERA SCALE
@@ -248,7 +295,7 @@ namespace GameProject
 
                 if (beatsElapsed % 4 == 0)
                 {
-                    projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45) / ((tickScale[ticksElapsedSinceBeat] - 1) * 1.1f + 1), resolutionX / resolutionY, 0.1f, 300f);
+                    projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45f / zoomFactor) / ((tickScale[ticksElapsedSinceBeat] - 1) * 1.1f + 1), resolutionX / resolutionY, 0.1f, 3000f);
                 }
             }
 
@@ -261,9 +308,11 @@ namespace GameProject
 
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
-            DrawModel(playerModel, world * Matrix.CreateScale(new Vector3(0.5f, 1f, 1f)) * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player
-
+            DrawModel(playerModel, world * Matrix.CreateScale(0.5f, 1f, 1f) * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player additive echo
+            
             world.Scale = new Vector3(1);
+
+            DrawModel(terrainModel, world * Matrix.CreateRotationX(MathHelper.ToRadians(-90)) * Matrix.CreateScale(1f, .1f, 1f) * Matrix.CreateTranslation(0f, -80f, -70f + (ticksElapsedSinceBeat) / 2f), view, projection);
 
             foreach (Enemy enemy in enemies)
             {
@@ -277,14 +326,14 @@ namespace GameProject
             {
                 if (((Enemy)enemies[i]).Health == 0 && ((Enemy)enemies[i]).Position.Z < 10)
                 {
-                    Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).Position, projection, view, world);
+                    Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).Position - 2 * new Vector3(0, 0, ((Enemy)enemies[i]).Model.Meshes[0].BoundingSphere.Radius), projection, view, ((Enemy)enemies[i]).WorldMatrix);
                     spriteBatch.Draw(lockTexture, new Vector2(pos.X - (lockTexture.Width / 2), pos.Y - (lockTexture.Height / 2)), Color.White);
                 }
             }
 
             GraphicsDevice.DepthStencilState = DepthStencilState.None;
-
-            DrawModel(playerModel, world * Matrix.CreateScale(new Vector3(0.5f, 1f, 1f)) * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player 
+            
+            DrawModel(playerModel, world * Matrix.CreateScale(new Vector3(0.5f, 1f, 1f)) * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player overlay
 
             spriteBatch.Draw(cursorTexture, cursorPosition, Color.White);
             spriteBatch.DrawString(scoreFont, nodeScore.ToString(), new Vector2(GraphicsDevice.Viewport.Width - scoreFont.MeasureString(nodeScore.ToString()).X - 5, GraphicsDevice.Viewport.Height - scoreFont.MeasureString(nodeScore.ToString()).Y + 15), Color.White);

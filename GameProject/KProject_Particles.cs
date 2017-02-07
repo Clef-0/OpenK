@@ -31,7 +31,6 @@ namespace GameProject
                      { 
                          Parameters = new ParticleReleaseParameters 
                          { 
-                             Speed = new Range<float>(0f, 0f), 
                              Quantity = 1, 
                              Rotation = new Range<float>(-(float)Math.PI, (float)Math.PI), 
                              Scale = 400.0f

@@ -134,3 +134,9 @@ C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audi
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\repeating arp.wma
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\sampled break.wma
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\snare.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\SliceLock.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Fonts\Bender.xnb
+C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\3D Models\Env\Terrain.xnb
+C:\Users\niall\Source\Repos\o2\OpenK\GameProject\bin\Windows\x86\Debug\GameProject.exe.config
+C:\Users\niall\Source\Repos\o2\OpenK\GameProject\obj\x86\Debug\GameProject.exe
+C:\Users\niall\Source\Repos\o2\OpenK\GameProject\obj\x86\Debug\GameProject.pdb

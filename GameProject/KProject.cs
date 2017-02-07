@@ -22,11 +22,14 @@ namespace GameProject
 {
     public partial class KProject : Game
     {
-        enum GameState {Menu, Rail}
+        enum GameState { Menu, Rail }
         GameState currentState = GameState.Menu;
+        enum NodeMusic { Fear, EyesWideOpen }
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        PrecisionTimer timer = new PrecisionTimer();
 
         // render resolution
         private int resolutionX;
@@ -39,7 +42,7 @@ namespace GameProject
         private int beatsElapsed = 0;
         private int acknowledgedBeatsElapsed = 0;
         private int ticksElapsedSinceBeat = 0;
-        private long startingTime = DateTime.Now.Ticks;
+        private long startingTime = 0;
 
         // cursor variables
         private MouseState oldMouseState;
@@ -59,24 +62,33 @@ namespace GameProject
         private SoundEffect fearDrumLoop;
         private SoundEffect fearBassLoop;
         private SoundEffect fearPadsLoop;
+        private SoundEffect fearSoulLoop;
+        private SoundEffect fearJourneyLoop;
+        private SoundEffect fearBreak1Loop;
 
         private SoundEffect boomDrum;
         private SoundEffect snareDrum;
 
-        SoundEffectInstance drum;
-        SoundEffectInstance bass;
-        SoundEffectInstance pads;
+        private SoundEffect drum;
+        private SoundEffect bass;
+        private SoundEffect pads;
+        private SoundEffect soul;
+        private SoundEffect journey;
+        private SoundEffect break1;
 
         // 3D Models
         private static Model playerModel;
         public static Model droneModel { get; set; }
         public static Model sentinelModel { get; set; }
         public static Model colonelModel { get; set; }
+        private static Model terrainModel;
 
         // Textures
         private Texture2D enemyParticleTexture;
+        private Texture2D lockParticleTexture;
         private Texture2D lockTexture;
         private Texture2D frameTexture;
+        private Texture2D linePixel;
         private Texture2D buttonPlayTexture;
         private Texture2D buttonResetTexture;
         private Texture2D buttonOptionsTexture;
@@ -88,6 +100,7 @@ namespace GameProject
         private Vector2 cursorPosition;
         private SpriteFont Arial12;
         private SpriteFont scoreFont;
+        private SpriteFont menuFont;
 
         private string[] log = {"", "", "", "", ""};
         private string logEntry;
@@ -96,6 +109,7 @@ namespace GameProject
         private Matrix world = Matrix.CreateTranslation(new Vector3(0, 0, 0));
         private Matrix view = Matrix.CreateLookAt(new Vector3(0, 4, 10), new Vector3(0, 3, 0), Vector3.UnitY);
         private Matrix projection;
+        private float zoomFactor = 1f;
 
         Camera2D pCamera;
 
@@ -116,7 +130,8 @@ namespace GameProject
         
         private List<object> enemies = new List<object>();
    
-        private Color areaColor = Color.FromNonPremultiplied(160, 64, 0, 255);
+        private Color currentNodeColor = Color.FromNonPremultiplied(160, 64, 0, 255);
+        private NodeMusic currentNodeMusic = NodeMusic.Fear;
 
         
 
@@ -128,7 +143,7 @@ namespace GameProject
             graphics.PreferredBackBufferWidth = resolutionX;
             graphics.PreferredBackBufferHeight = resolutionY;
             graphics.IsFullScreen = true;
-            projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), resolutionX / resolutionY, 0.1f, 300f);
+            projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), resolutionX / resolutionY, 0.1f, 3000f);
 
             Content.RootDirectory = "Content";
 
@@ -136,7 +151,7 @@ namespace GameProject
 
             rootNode = new Node
             {
-                Type = Node.NodeType.Rail,
+                Type = NodeType.Rail,
                 Company = NameGenerate(1),
                 Country = NameGenerate(2),
                 Address = NameGenerate(3)
@@ -161,22 +176,28 @@ namespace GameProject
             // Audio
             fearDrumLoop = Content.Load<SoundEffect>(@"Audio\fear\clean beat");
             fearBassLoop = Content.Load<SoundEffect>(@"Audio\fear\gross bass");
-            fearPadsLoop = Content.Load<SoundEffect>(@"Audio\fear\california soul");
+            fearPadsLoop = Content.Load<SoundEffect>(@"Audio\fear\intro pads");
+            fearSoulLoop = Content.Load<SoundEffect>(@"Audio\fear\california soul");
+            fearJourneyLoop = Content.Load<SoundEffect>(@"Audio\fear\journey pad");
+            fearBreak1Loop = Content.Load<SoundEffect>(@"Audio\fear\break 1");
             boomDrum = Content.Load<SoundEffect>(@"Audio\fear\boom");
             snareDrum = Content.Load<SoundEffect>(@"Audio\snare");
 
             // Fonts
             Arial12 = Content.Load<SpriteFont>(@"Fonts\Arial12");
             scoreFont = Content.Load<SpriteFont>(@"Fonts\ScoreFont");
+            menuFont = Content.Load<SpriteFont>(@"Fonts\Bender");
 
             // 3D Models
             playerModel = this.Content.Load<Model>(@"3D Models\Player\player");
             droneModel = this.Content.Load<Model>(@"3D Models\Test\Ship");
             sentinelModel = this.Content.Load<Model>(@"3D Models\Test\Cube");
             colonelModel = this.Content.Load<Model>(@"3D Models\Test\Cube");
+            terrainModel = this.Content.Load<Model>(@"3D Models\Env\Terrain");
 
             // Textures
             enemyParticleTexture = Content.Load<Texture2D>(@"Textures\Slice");
+            lockParticleTexture = Content.Load<Texture2D>(@"Textures\SliceLock");
             frameTexture = Content.Load<Texture2D>(@"Textures\WindowFrame");
             buttonPlayTexture = Content.Load<Texture2D>(@"Textures\WindowButtonPlay");
             buttonResetTexture = Content.Load<Texture2D>(@"Textures\WindowButtonReset");
@@ -185,14 +206,19 @@ namespace GameProject
             cursorTexture = Content.Load<Texture2D>(@"Textures\Cursor_Menu");
             cursorRail = Content.Load<Texture2D>(@"Textures\Cursor");
             cursorMenu = Content.Load<Texture2D>(@"Textures\Cursor_Menu");
+            linePixel = Content.Load<Texture2D>(@"Textures\Line");
             lockTexture = Content.Load<Texture2D>(@"Textures\Lock");
             vignetteTexture = Content.Load<Texture2D>(@"Textures\Vignette");
 
             ParticleInit(new TextureRegion2D(enemyParticleTexture));
+            //ParticleInit(new TextureRegion2D(cursorMenu), new TextureRegion2D(frameTexture));
 
-            bass = fearBassLoop.CreateInstance();
-            drum = fearDrumLoop.CreateInstance();
-            pads = fearPadsLoop.CreateInstance();
+            bass = fearBassLoop;
+            drum = fearDrumLoop;
+            pads = fearPadsLoop;
+            soul = fearSoulLoop;
+            journey = fearJourneyLoop;
+            break1 = fearBreak1Loop;
         }
 
         protected override void Update(GameTime gameTime)
@@ -239,10 +265,11 @@ namespace GameProject
                     effect.Projection = projection;
                     effect.EnableDefaultLighting();
                     effect.FogEnabled = true;
-                    HslColor fogColor = new HslColor(areaColor.ToHsl().H, areaColor.ToHsl().S, 0);
+                    HslColor fogColor = new HslColor(currentNodeColor.ToHsl().H, currentNodeColor.ToHsl().S, 0);
                     effect.FogColor = fogColor.ToRgb().ToVector3();
                     effect.FogStart = 50f;
-                    effect.FogEnd = 180f;
+                    //effect.FogEnd = 180f;
+                    effect.FogEnd = 1000f;
                 }
                 mesh.Draw();
             }
