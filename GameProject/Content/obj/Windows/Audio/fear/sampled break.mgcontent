@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/Audio/fear/sampled break.wav</SourceFile>
+  <SourceFile>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/sampled break.wav</SourceFile>
   <SourceTime>2017-02-01T10:56:03.2837496+00:00</SourceTime>
-  <DestFile>C:/Users/niall/Source/Repos/OpenK/GameProject/Content/bin/Windows/Audio/fear/sampled break.xnb</DestFile>
-  <DestTime>2017-02-01T18:50:18.4009411+00:00</DestTime>
+  <DestFile>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/bin/Windows/Audio/fear/sampled break.xnb</DestFile>
+  <DestTime>2017-02-07T21:35:37.6658155+00:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

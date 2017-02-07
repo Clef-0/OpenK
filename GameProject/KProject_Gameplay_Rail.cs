@@ -74,6 +74,10 @@ namespace GameProject
             {
                 zoomFactor = 1f + (ticksElapsedSinceBeat / 100f);
             }
+            else
+            {
+                zoomFactor = 1f;
+            }
 
             bool mouseInView = true;
             // mouse stuff
