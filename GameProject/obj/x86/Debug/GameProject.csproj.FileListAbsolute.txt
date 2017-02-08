@@ -228,3 +228,4 @@ C:\Users\niall\Source\Repos\o2\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.X
 C:\Users\niall\Source\Repos\o2\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.RawInput.xml
 C:\Users\niall\Source\Repos\o2\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\niall\Source\Repos\o2\OpenK\GameProject\obj\x86\Debug\GameProject.csprojResolveAssemblyReference.cache
+C:\Users\niall\Source\Repos\o2\OpenK\GameProject\bin\Windows\x86\Debug\Content\3D Models\Test\Sentinel.xnb

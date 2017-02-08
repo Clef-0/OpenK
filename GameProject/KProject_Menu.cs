@@ -69,9 +69,9 @@ namespace GameProject
             spriteBatch.DrawString(menuFont, "reset game", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2), Color.White);
             spriteBatch.DrawString(menuFont, "options", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 + 25), Color.White);
             spriteBatch.DrawString(menuFont, "exit", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 + 50), Color.White);
-            spriteBatch.DrawString(Arial12, rootNode.Company, new Vector2(5, 120), Color.White);
-            spriteBatch.DrawString(Arial12, rootNode.Country, new Vector2(5, 140), Color.White);
-            spriteBatch.DrawString(Arial12, rootNode.Address, new Vector2(5, 160), Color.White);
+            spriteBatch.DrawString(menuFont, rootNode.Company, new Vector2(5, 120), Color.White);
+            spriteBatch.DrawString(menuFont, rootNode.Country, new Vector2(5, 140), Color.White);
+            spriteBatch.DrawString(menuFont, rootNode.Address, new Vector2(5, 160), Color.White);
             DrawTree(rootNode);
             spriteBatch.DrawString(scoreFont, "OpenK", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 - 170), Color.White);
 

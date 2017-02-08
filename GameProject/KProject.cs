@@ -51,8 +51,6 @@ namespace GameProject
 
         private int lockedEnemies = 0;
 
-        private int nodeScore = 0;
-
         public static readonly Random Rnd = new Random((int)DateTime.Now.Ticks);
 
         // particles
@@ -132,8 +130,9 @@ namespace GameProject
    
         private Color currentNodeColor = Color.FromNonPremultiplied(160, 64, 0, 255);
         private NodeMusic currentNodeMusic = NodeMusic.Fear;
+        private int currentNodeScore = 0;
 
-        
+
 
         public KProject()
         {
@@ -191,7 +190,7 @@ namespace GameProject
             // 3D Models
             playerModel = this.Content.Load<Model>(@"3D Models\Player\player");
             droneModel = this.Content.Load<Model>(@"3D Models\Test\Ship");
-            sentinelModel = this.Content.Load<Model>(@"3D Models\Test\Cube");
+            sentinelModel = this.Content.Load<Model>(@"3D Models\Test\Sentinel");
             colonelModel = this.Content.Load<Model>(@"3D Models\Test\Cube");
             terrainModel = this.Content.Load<Model>(@"3D Models\Env\Terrain");
 
@@ -268,8 +267,7 @@ namespace GameProject
                     HslColor fogColor = new HslColor(currentNodeColor.ToHsl().H, currentNodeColor.ToHsl().S, 0);
                     effect.FogColor = fogColor.ToRgb().ToVector3();
                     effect.FogStart = 50f;
-                    //effect.FogEnd = 180f;
-                    effect.FogEnd = 1000f;
+                    effect.FogEnd = 180f;
                 }
                 mesh.Draw();
             }
