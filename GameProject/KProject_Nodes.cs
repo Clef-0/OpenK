@@ -30,7 +30,7 @@ namespace GameProject
                 bool nodeMade = false;
                 do
                 {
-                    int random = Rnd.Next(1,6);
+                    int random = Rnd.Next(1,2);
                     switch (random)
                     {
                         case 1: // rail node
@@ -47,77 +47,22 @@ namespace GameProject
                                 nodeMade = true;
                             }
                             break;
-                        case 2: // cabal node
-                            if (cabalNodesMade != cabalNodesToMake)
-                            {
-                                parent.Children.Add(new Node
-                                {
-                                    Type = NodeType.Cabal,
-                                    Company = NameGenerate(1),
-                                    Country = NameGenerate(2),
-                                    Address = NameGenerate(3)
-                                });
-                                cabalNodesMade += 1;
-                                nodeMade = true;
-                            }
-                            break;
-                        default: // minigame node
-                            if (miniNodesMade != miniNodesToMake)
-                            {
-                                switch (random)
-                                {
-                                    case 3:
-                                        parent.Children.Add(new Node
-                                        {
-                                            Type = NodeType.Hell,
-                                            Company = NameGenerate(1),
-                                            Country = NameGenerate(2),
-                                            Address = NameGenerate(3)
-                                        });
-                                        break;
-                                    case 4:
-                                        parent.Children.Add(new Node
-                                        {
-                                            Type = NodeType.Net,
-                                            Company = NameGenerate(1),
-                                            Country = NameGenerate(2),
-                                            Address = NameGenerate(3)
-                                        });
-                                        break;
-                                    case 5:
-                                        parent.Children.Add(new Node
-                                        {
-                                            Type = NodeType.Road,
-                                            Company = NameGenerate(1),
-                                            Country = NameGenerate(2),
-                                            Address = NameGenerate(3)
-                                        });
-                                        break;
-                                }
-                                miniNodesMade += 1;
-                                nodeMade = true;
-                            }
-                            break;
                     }
                 } while (!nodeMade);
             }
 
             foreach (Node child in parent.Children)
             {
-                if (railNodesMade + cabalNodesMade + miniNodesMade < totalNodesToMake)
+                switch (level)
                 {
-                    switch (level)
-                    {
-                        case 0:
-                            CreateChildren(child, 1, 3, level + 1);
-                            break;
-                        case 1:
-                            CreateChildren(child, 1, 2, level + 1);
-                            break;
-                        default:
-                            CreateChildren(child, 1, 1, level + 1);
-                            break;
-                    }
+                    case 0:
+                        CreateChildren(child, 1, 3, level + 1);
+                        break;
+                    case 1:
+                        CreateChildren(child, 1, 2, level + 1);
+                        break;
+                    default:
+                        break;
                 }
             }
         }
@@ -165,8 +110,31 @@ namespace GameProject
 
         private void DrawTree(Node startingNode)
         {
-            spriteBatch.DrawString(Arial12, rootNode.Company, new Vector2(700 , 300), Color.White);
-            DrawLine(spriteBatch, new Vector2(700,300), new Vector2(1061,800));
+            int treeX = 700;
+            int treeY = 300;
+            //spriteBatch.DrawString(menuFont, rootNode.Company, new Vector2(700, 300), Color.White);
+            spriteBatch.Draw(linePixel, new Vector2(treeX, treeY), Color.White); // draw root node
+            DrawNode(rootNode, new Vector2(treeX,treeY), MathHelper.ToRadians(0), MathHelper.ToRadians(360));
+            //DrawLine(spriteBatch, new Vector2(700,300), new Vector2(1061,800));
+        }
+
+        private void DrawNode(Node parentNode, Vector2 centre, double angleStart, double angleRange)
+        {
+            int iterator = 0;
+            foreach (Node node in parentNode.Children)
+            {
+                double angle = angleStart + (iterator * angleRange / rootNode.Children.Count);
+                float nodeX = centre.X + (30f * (float)Math.Cos(angle));
+                float nodeY = centre.Y + (30f * (float)Math.Sin(angle));
+                spriteBatch.Draw(linePixel, new Vector2(nodeX, nodeY), Color.White);
+                DrawLine(spriteBatch, new Vector2(centre.X, centre.Y), new Vector2(nodeX, nodeY));
+                if (node.Children.Count > 0)
+                {
+                    double aO = (angleRange / rootNode.Children.Count) / 2;
+                    DrawNode(node, new Vector2(nodeX, nodeY), angle - aO, angleRange / rootNode.Children.Count);
+                }
+                iterator++;
+            }
         }
 
         void DrawLine(SpriteBatch spriteBatch, Vector2 start, Vector2 end)

@@ -114,21 +114,21 @@ namespace GameProject
                     enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.Straight));
                     enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.Straight));
                 }
-                if (currentNodeScore >= 400 && beatsElapsed % 4 == 0 && currentNodeScore <= 5000)
+                if (currentNodeScore >= 400 && beatsElapsed % 4 == 0 && currentNodeScore <= 2000)
                 {
                     enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveIn));
                     enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveDown));
                     enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveIn));
                     enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveDown));
                 }
-                if (currentNodeScore >= 1000 && beatsElapsed % 4 == 0 && currentNodeScore <= 5000)
+                if (currentNodeScore >= 1000 && beatsElapsed % 4 == 0 && currentNodeScore <= 2000)
                 {
                     enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
                     enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveIn));
                     enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
                     enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveIn));
                 }
-                if (currentNodeScore >= 0 && beatsElapsed % 4 == 0 && currentNodeScore <= 10000)
+                if (currentNodeScore >= 2000 && beatsElapsed % 4 == 0 && currentNodeScore <= 10000)
                 {
                     enemies.Add(new Sentinel(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveIn));
                     enemies.Add(new Sentinel(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveIn));

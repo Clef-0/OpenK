@@ -141,7 +141,7 @@ namespace GameProject
             resolutionY = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             graphics.PreferredBackBufferWidth = resolutionX;
             graphics.PreferredBackBufferHeight = resolutionY;
-            graphics.IsFullScreen = true;
+            graphics.IsFullScreen = false;
             projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), resolutionX / resolutionY, 0.1f, 3000f);
 
             Content.RootDirectory = "Content";

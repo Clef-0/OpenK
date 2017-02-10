@@ -129,3 +129,6 @@ C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\Content\Au
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\Content\Audio\fear\sampled break.wma
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\Content\Audio\fear\sampled break.xnb
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\Content\Fonts\ScoreFont.xnb
+C:\Users\niall\Source\Repos\o2\OpenK\GameProject\bin\Windows\x86\Release\GameProject.exe.config
+C:\Users\niall\Source\Repos\o2\OpenK\GameProject\obj\x86\Release\GameProject.exe
+C:\Users\niall\Source\Repos\o2\OpenK\GameProject\obj\x86\Release\GameProject.pdb
