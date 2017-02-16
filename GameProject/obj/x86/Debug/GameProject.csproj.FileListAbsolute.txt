@@ -229,3 +229,141 @@ C:\Users\niall\Source\Repos\o2\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.R
 C:\Users\niall\Source\Repos\o2\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\niall\Source\Repos\o2\OpenK\GameProject\obj\x86\Debug\GameProject.csprojResolveAssemblyReference.cache
 C:\Users\niall\Source\Repos\o2\OpenK\GameProject\bin\Windows\x86\Debug\Content\3D Models\Test\Sentinel.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\dubloop.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\kickloop.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\arps.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\boom.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\break 1.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\break 2.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\california soul.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\chopped choir.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clank beat.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clean bass.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clean beat.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\fear is a mind killer.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\gross bass.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\intro pads.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\journey pad.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\killer.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\long journey 2.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\long journey.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\repeating arp.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\sampled break.wma
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\3D Models\Env\Terrain.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\3D Models\Test\Sentinel.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\snare.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\arps.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\boom.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\break 1.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\break 2.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\california soul.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\chopped choir.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clank beat.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clean bass.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clean beat.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\fear is a mind killer.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\gross bass.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\intro pads.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\journey pad.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\killer.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\long journey 2.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\long journey.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\repeating arp.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\sampled break.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Fonts\Bender.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Fonts\ScoreFont.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\SliceLock.xnb
+N:\Computer Science\Coursework\GameProject\GameProject\bin\Windows\x86\Debug\Content\Textures\NodeCircle.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\GameProject.exe.config
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\obj\x86\Debug\GameProject.exe
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\obj\x86\Debug\GameProject.pdb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\dubloop.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\kickloop.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\arps.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\boom.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\break 1.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\break 2.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\california soul.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\chopped choir.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clank beat.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clean bass.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clean beat.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\fear is a mind killer.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\gross bass.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\intro pads.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\journey pad.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\killer.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\long journey 2.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\long journey.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\repeating arp.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\sampled break.wma
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Effects\vignette.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\3D Models\Env\Terrain.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\3D Models\Player\player.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\3D Models\Test\Cube.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\3D Models\Test\Sentinel.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\3D Models\Test\Ship.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\dubloop.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\kickloop.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\snare.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\arps.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\boom.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\break 1.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\break 2.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\california soul.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\chopped choir.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clank beat.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clean bass.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\clean beat.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\fear is a mind killer.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\gross bass.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\intro pads.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\journey pad.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\killer.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\long journey 2.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\long journey.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\repeating arp.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Audio\fear\sampled break.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Fonts\Arial12.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Fonts\Bender.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Fonts\ScoreFont.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\Cursor.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\Cursor_Menu.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\EnemyParticle.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\Line.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\Lock.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\NodeCircle.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\ParticleTest.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\Slice.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\SliceLock.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\Vignette.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowButtonExit.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowButtonOptions.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowButtonPlay.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowButtonReset.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\WindowFrame.xnb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\GameProject.exe
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\GameProject.pdb
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\MonoGame.Extended.dll
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.RawInput.dll
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.RawInput.xml
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\obj\x86\Debug\GameProject.csprojResolveAssemblyReference.cache

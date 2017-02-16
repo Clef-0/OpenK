@@ -4,48 +4,49 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/3D Models/Test/Cube.obj</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Fonts/Arial12.spritefont</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Textures/Cursor.png</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/3D Models/Player/player.obj</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/kickloop.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Textures/ParticleTest.png</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/dubloop.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Textures/Lock.png</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Textures/EnemyParticle.png</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Textures/Vignette.png</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Textures/Cursor_Menu.png</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Textures/WindowFrame.png</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Textures/WindowButtonExit.png</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Textures/WindowButtonOptions.png</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Textures/WindowButtonPlay.png</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Textures/WindowButtonReset.png</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/3D Models/Test/Ship.obj</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Textures/Line.png</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Textures/Slice.png</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Fonts/ScoreFont.spritefont</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/arps.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/boom.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/break 1.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/break 2.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/california soul.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/chopped choir.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/clank beat.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/clean bass.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/clean beat.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/fear is a mind killer.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/gross bass.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/intro pads.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/journey pad.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/killer.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/long journey 2.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/long journey.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/repeating arp.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/fear/sampled break.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Audio/snare.wav</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Textures/SliceLock.png</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/Fonts/Bender.spritefont</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/3D Models/Env/Terrain.obj</File>
-    <File>C:/Users/niall/Source/Repos/o2/OpenK/GameProject/Content/3D Models/Test/Sentinel.obj</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/3D Models/Test/Cube.obj</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Fonts/Arial12.spritefont</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/Cursor.png</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/3D Models/Player/player.obj</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/kickloop.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/ParticleTest.png</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/dubloop.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/Lock.png</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/EnemyParticle.png</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/Vignette.png</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/Cursor_Menu.png</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/WindowFrame.png</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/WindowButtonExit.png</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/WindowButtonOptions.png</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/WindowButtonPlay.png</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/WindowButtonReset.png</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/3D Models/Test/Ship.obj</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/Line.png</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/Slice.png</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Fonts/ScoreFont.spritefont</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/arps.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/boom.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/break 1.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/break 2.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/california soul.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/chopped choir.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/clank beat.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/clean bass.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/clean beat.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/fear is a mind killer.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/gross bass.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/intro pads.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/journey pad.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/killer.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/long journey 2.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/long journey.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/repeating arp.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/fear/sampled break.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Audio/snare.wav</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/SliceLock.png</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Fonts/Bender.spritefont</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/3D Models/Env/Terrain.obj</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/3D Models/Test/Sentinel.obj</File>
+    <File>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Textures/NodeCircle.png</File>
   </SourceFiles>
 </SourceFileCollection>

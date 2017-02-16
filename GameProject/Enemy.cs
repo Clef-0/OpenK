@@ -48,7 +48,7 @@ namespace GameProject
 
         public void Update()
         {
-            float curveval = 0.001f;
+            float curveval = 0.004f;
             float actualVelocity = (float)(Velocity / 5);
             if (Position.Z > -40)
             {
@@ -61,17 +61,20 @@ namespace GameProject
                 if (Position.X < 0)
                 {
                     Rotation = new Vector3(Rotation.X - curveval, Rotation.Y - (0.5f * curveval), Rotation.Z);
+                    Position = new Vector3(Position.X - 0.02f, Position.Y + 0.01f, Position.Z);
                 }
                 else
                 {
                     Rotation = new Vector3(Rotation.X - curveval, Rotation.Y + (0.5f * curveval), Rotation.Z);
+                    Position = new Vector3(Position.X + 0.02f, Position.Y + 0.01f, Position.Z);
                 }
             }
             else if (FlightMode == EnemyFlightMode.CurveDown)
             {
                 if (Position.Z > -80)
                 {
-                    Rotation = new Vector3(-Math.Abs(Math.Abs(Rotation.X) + ((100 + 2 * Math.Abs(Position.Z))/100 * curveval)), Rotation.Y, Rotation.Z);
+                    Position = new Vector3(Position.X, Position.Y - 0.06f, Position.Z);
+                    Rotation = new Vector3(Rotation.X + 0.005f, Rotation.Y, Rotation.Z);
                     actualVelocity /= Math.Abs(Position.Z) / 40;
                 }
             }

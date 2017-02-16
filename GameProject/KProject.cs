@@ -22,9 +22,8 @@ namespace GameProject
 {
     public partial class KProject : Game
     {
-        enum GameState { Menu, Rail }
+        enum GameState { Menu, Rail, Marathon };
         GameState currentState = GameState.Menu;
-        enum NodeMusic { Fear, EyesWideOpen }
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -35,9 +34,8 @@ namespace GameProject
         private int resolutionX;
         private int resolutionY;
 
-        // time signature
+        // timing variables
         private int bpm = 90;
-
         private float ticksPerBeat;
         private int beatsElapsed = 0;
         private int acknowledgedBeatsElapsed = 0;
@@ -54,7 +52,8 @@ namespace GameProject
         public static readonly Random Rnd = new Random((int)DateTime.Now.Ticks);
 
         // particles
-        ParticleEffect pEffect;
+        ParticleEffect pEffectExplosion;
+        ParticleEffect pEffectLock;
 
         // Audio
         private SoundEffect fearDrumLoop;
@@ -95,6 +94,7 @@ namespace GameProject
         private Texture2D cursorRail;
         private Texture2D cursorMenu;
         private Texture2D vignetteTexture;
+        private Texture2D nodeCircle;
         private Vector2 cursorPosition;
         private SpriteFont Arial12;
         private SpriteFont scoreFont;
@@ -123,14 +123,14 @@ namespace GameProject
         private const int miniNodesToMake = 10;
         private const int totalNodesToMake = railNodesToMake + cabalNodesToMake + miniNodesToMake;
         private int railNodesMade = 1;
-        private int cabalNodesMade = 0;
-        private int miniNodesMade = 0;
         
         private List<object> enemies = new List<object>();
    
         private Color currentNodeColor = Color.FromNonPremultiplied(160, 64, 0, 255);
         private NodeMusic currentNodeMusic = NodeMusic.Fear;
         private int currentNodeScore = 0;
+        private int currentNodeSpawned = 0;
+        private int currentNodeShot = 0;
 
 
 
@@ -141,7 +141,8 @@ namespace GameProject
             resolutionY = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             graphics.PreferredBackBufferWidth = resolutionX;
             graphics.PreferredBackBufferHeight = resolutionY;
-            graphics.IsFullScreen = false;
+            graphics.PreferMultiSampling = true;
+            graphics.IsFullScreen = true;
             projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), resolutionX / resolutionY, 0.1f, 3000f);
 
             Content.RootDirectory = "Content";
@@ -208,8 +209,9 @@ namespace GameProject
             linePixel = Content.Load<Texture2D>(@"Textures\Line");
             lockTexture = Content.Load<Texture2D>(@"Textures\Lock");
             vignetteTexture = Content.Load<Texture2D>(@"Textures\Vignette");
+            nodeCircle = Content.Load<Texture2D>(@"Textures\NodeCircle");
 
-            ParticleInit(new TextureRegion2D(enemyParticleTexture));
+            ParticleInit(new TextureRegion2D(enemyParticleTexture), new TextureRegion2D(lockParticleTexture));
             //ParticleInit(new TextureRegion2D(cursorMenu), new TextureRegion2D(frameTexture));
 
             bass = fearBassLoop;
@@ -222,6 +224,8 @@ namespace GameProject
 
         protected override void Update(GameTime gameTime)
         {
+            base.Update(gameTime);
+
             switch (currentState)
             {
                 case GameState.Menu:
@@ -230,12 +234,16 @@ namespace GameProject
                 case GameState.Rail:
                     RailGameplayUpdate(gameTime);
                     break;
+                case GameState.Marathon:
+                    RailGameplayUpdate(gameTime);
+                    break;
             }
 
-            base.Update(gameTime);
-
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            {
+                currentState = GameState.Menu;
+                cursorTexture = cursorMenu;
+            }
         }
 
         protected override void Draw(GameTime gameTime)
@@ -246,6 +254,9 @@ namespace GameProject
                     MenuDraw(gameTime);
                     break;
                 case GameState.Rail:
+                    RailGameplayDraw(gameTime);
+                    break;
+                case GameState.Marathon:
                     RailGameplayDraw(gameTime);
                     break;
             }

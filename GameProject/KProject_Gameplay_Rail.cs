@@ -96,7 +96,8 @@ namespace GameProject
                 mouseInView = false;
             }
 
-            pEffect.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            pEffectExplosion.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            pEffectLock.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
             // location to draw cursor sprite
             cursorPosition = new Vector2(mouseX - 37, mouseY - 37);
@@ -113,6 +114,7 @@ namespace GameProject
                     enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.Straight));
                     enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.Straight));
                     enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.Straight));
+                    currentNodeSpawned += 4;
                 }
                 if (currentNodeScore >= 400 && beatsElapsed % 4 == 0 && currentNodeScore <= 2000)
                 {
@@ -120,6 +122,7 @@ namespace GameProject
                     enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveDown));
                     enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveIn));
                     enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                    currentNodeSpawned += 4;
                 }
                 if (currentNodeScore >= 1000 && beatsElapsed % 4 == 0 && currentNodeScore <= 2000)
                 {
@@ -127,13 +130,16 @@ namespace GameProject
                     enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveIn));
                     enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
                     enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveIn));
+                    currentNodeSpawned += 4;
                 }
                 if (currentNodeScore >= 2000 && beatsElapsed % 4 == 0 && currentNodeScore <= 10000)
                 {
                     enemies.Add(new Sentinel(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveIn));
                     enemies.Add(new Sentinel(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveIn));
                     enemies.Add(new Sentinel(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveIn));
+                    currentNodeSpawned += 3;
                 }
+
                 //switch (Rnd.Next(1, 2))
                 //{
                 //    case 1:
@@ -156,10 +162,10 @@ namespace GameProject
                 if (enemies[i] != null)
                 {
                     ((Enemy)enemies[i]).Update();
-                    ((Enemy)enemies[i]).WorldMatrix = Matrix.CreateTranslation(((Enemy)enemies[i]).Position)
-                        * Matrix.CreateRotationX(((Enemy)enemies[i]).Rotation.X)
+                    ((Enemy)enemies[i]).WorldMatrix = Matrix.CreateRotationX(((Enemy)enemies[i]).Rotation.X)
                         * Matrix.CreateRotationY(((Enemy)enemies[i]).Rotation.Y)
-                        * Matrix.CreateRotationZ(((Enemy)enemies[i]).Rotation.Z);
+                        * Matrix.CreateRotationZ(((Enemy)enemies[i]).Rotation.Z)
+                        * Matrix.CreateTranslation(((Enemy)enemies[i]).Position);
 
                     if (mouseInView && newMouseState.LeftButton == ButtonState.Pressed)
                     {
@@ -175,6 +181,8 @@ namespace GameProject
                             ((Enemy)enemies[i]).Injure(1);
                             lockedEnemies += 1;
                             somethingLocked = true;
+                            Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).WorldMatrix.Translation, projection, view, world);
+                            pEffectLock.Trigger(new Vector2(pos.X, pos.Y));
                         }
                     }
                     if (enemies.ElementAtOrDefault(i) != null)
@@ -183,8 +191,16 @@ namespace GameProject
                         {
                             if (((Enemy)enemies[i]).Health == 0)
                             {
-                                lockedEnemies -= 1;
+                                if (((Enemy)enemies[i]).GetType().Name.ToLower() == "drone")
+                                {
+                                    lockedEnemies -= 1;
+                                }
+                                else
+                                {
+                                    lockedEnemies -= 2;
+                                }
                                 currentNodeScore += ((Enemy)enemies[i]).Points;
+                                currentNodeShot += 1;
                             }
                             indicesToCull.Add(i);
                             //logEntry = i + " offscreen and culled";
@@ -199,7 +215,6 @@ namespace GameProject
                 inst.Volume /= 10f;
                 inst.Pitch *= 10f;
                 inst.Play();
-
             }
 
             offsetX = (mouseX - ((float)GraphicsDevice.Viewport.Width / 2)) / 1000;
@@ -227,8 +242,8 @@ namespace GameProject
                 {
                     if (((Enemy)enemies[i]).Health == 0 && newMouseState.LeftButton == ButtonState.Released)
                     {
-                        Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).Position - new Vector3(0,0,((Enemy)enemies[i]).Model.Meshes[0].BoundingSphere.Radius), projection, view, ((Enemy)enemies[i]).WorldMatrix);
-                        pEffect.Trigger(new Vector2(pos.X, pos.Y));
+                        Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).WorldMatrix.Translation, projection, view, world);
+                        pEffectExplosion.Trigger(new Vector2(pos.X, pos.Y));
                         enemiesDestroyedScore += ((Enemy)enemies[i]).Points;
                         indicesToCull.Add(i);
                         lockedEnemies = 0;
@@ -270,15 +285,12 @@ namespace GameProject
 
         private void RailGameplayDraw(GameTime gameTime)
         {
-            int R = 0;
-            int G = 128;
-            int B = 128;
-            Color customColor = Color.FromNonPremultiplied(R, G, B, 255);
             GraphicsDevice.Clear(currentNodeColor);
 
             spriteBatch.Begin(blendState: BlendState.Additive, transformMatrix: pCamera.GetViewMatrix());
 
-            spriteBatch.Draw(pEffect);
+            spriteBatch.Draw(pEffectExplosion);
+            spriteBatch.Draw(pEffectLock);
 
             spriteBatch.End();
 
@@ -356,7 +368,7 @@ namespace GameProject
             {
                 if (((Enemy)enemies[i]).Health == 0 && ((Enemy)enemies[i]).Position.Z < 10)
                 {
-                    Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).Position - 2 * new Vector3(0, 0, ((Enemy)enemies[i]).Model.Meshes[0].BoundingSphere.Radius), projection, view, ((Enemy)enemies[i]).WorldMatrix);
+                    Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).WorldMatrix.Translation, projection, view, world);
                     spriteBatch.Draw(lockTexture, new Vector2(pos.X - (lockTexture.Width / 2), pos.Y - (lockTexture.Height / 2)), Color.White);
                 }
             }
@@ -368,6 +380,20 @@ namespace GameProject
             spriteBatch.Draw(cursorTexture, cursorPosition, Color.White);
             spriteBatch.DrawString(scoreFont, currentNodeScore.ToString(), new Vector2(GraphicsDevice.Viewport.Width - scoreFont.MeasureString(currentNodeScore.ToString()).X - 5, GraphicsDevice.Viewport.Height - scoreFont.MeasureString(currentNodeScore.ToString()).Y + 15), Color.White);
 
+
+            if (currentState == GameState.Marathon)
+            {
+                float newhue = currentNodeColor.ToHsl().H - 0.001f;
+                if (currentNodeColor.ToHsl().H == 0)
+                {
+                    currentNodeColor = new HslColor(70, currentNodeColor.ToHsl().S, currentNodeColor.ToHsl().L).ToRgb();
+                }
+                else
+                {
+                    currentNodeColor = new HslColor(newhue, currentNodeColor.ToHsl().S, currentNodeColor.ToHsl().L).ToRgb();
+                }
+                spriteBatch.DrawString(scoreFont, newhue.ToString(), new Vector2(GraphicsDevice.Viewport.Width - scoreFont.MeasureString(currentNodeScore.ToString()).X - 500, GraphicsDevice.Viewport.Height - scoreFont.MeasureString(currentNodeScore.ToString()).Y + 15), Color.White);
+            }
             spriteBatch.End();
         }
     }

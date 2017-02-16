@@ -27,28 +27,17 @@ namespace GameProject
             int numberOfChildren = Rnd.Next(minChildren, maxChildren + 1);
             for (int i = 0; i < numberOfChildren; i++)
             {
-                bool nodeMade = false;
-                do
+                if (railNodesMade != railNodesToMake)
                 {
-                    int random = Rnd.Next(1,2);
-                    switch (random)
+                    parent.Children.Add(new Node
                     {
-                        case 1: // rail node
-                            if (railNodesMade != railNodesToMake)
-                            {
-                                parent.Children.Add(new Node
-                                {
-                                    Type = NodeType.Rail,
-                                    Company = NameGenerate(1),
-                                    Country = NameGenerate(2),
-                                    Address = NameGenerate(3)
-                                });
-                                railNodesMade += 1;
-                                nodeMade = true;
-                            }
-                            break;
-                    }
-                } while (!nodeMade);
+                        Type = NodeType.Rail,
+                        Company = NameGenerate(1),
+                        Country = NameGenerate(2),
+                        Address = NameGenerate(3)
+                    });
+                    railNodesMade += 1;
+                }
             }
 
             foreach (Node child in parent.Children)
@@ -66,8 +55,6 @@ namespace GameProject
                 }
             }
         }
-
-        static Random random = new Random();
 
         static string NameGenerate(int type)
         {
@@ -91,11 +78,11 @@ namespace GameProject
                     int ip1, ip2, ip3, ip4, ip5;
                     do
                     {
-                        ip1 = random.Next(11, 210);
-                        ip2 = random.Next(8, 255);
-                        ip3 = random.Next(8, 255);
-                        ip4 = random.Next(11, 210);
-                        ip5 = random.Next(1, 40000);
+                        ip1 = Rnd.Next(11, 210);
+                        ip2 = Rnd.Next(8, 255);
+                        ip3 = Rnd.Next(8, 255);
+                        ip4 = Rnd.Next(11, 210);
+                        ip5 = Rnd.Next(1, 40000);
                     } while (ip1 == 192);
                     return (ip1 + "." + ip2 + "." + ip3 + "." + ip4 + ":" + ip5);
             }
@@ -105,17 +92,57 @@ namespace GameProject
 
         static string RandomStringFromArray(string[] strings)
         {
-            return strings[random.Next(0, strings.Count())];
+            return strings[Rnd.Next(0, strings.Count())];
         }
+
+        private Node FindNode(Point location, Node currentNode)
+        {
+            Node returnNode = null;
+            bool found = false;
+            int boundSize = 10;
+
+            //check current node
+            if (currentNode.MenuPosition.X + boundSize > location.X && currentNode.MenuPosition.X - boundSize < location.X && currentNode.MenuPosition.Y + boundSize > location.Y && currentNode.MenuPosition.Y - boundSize < location.Y)
+            {
+                found = true;
+                returnNode = currentNode;
+            }
+
+                //check current node's children
+                foreach (Node childNode in currentNode.Children)
+                {
+                    if (childNode.MenuPosition.X + boundSize > location.X && childNode.MenuPosition.X - boundSize < location.X && childNode.MenuPosition.Y + boundSize > location.Y && childNode.MenuPosition.Y - boundSize < location.Y)
+                {
+                    if (!found)
+                    {
+                        found = true;
+                        returnNode = childNode;
+                    }
+
+                }
+                if (!found)
+                {
+                    Node grandchildNode = FindNode(location, childNode);
+                    if (grandchildNode != null)
+                    {
+                        found = true;
+                        returnNode = grandchildNode;
+                    }
+                }
+            }
+
+            return returnNode;
+        }
+
 
         private void DrawTree(Node startingNode)
         {
-            int treeX = 700;
-            int treeY = 300;
+            int treeX = resolutionX /2;
+            int treeY = resolutionY /2;
             //spriteBatch.DrawString(menuFont, rootNode.Company, new Vector2(700, 300), Color.White);
-            spriteBatch.Draw(linePixel, new Vector2(treeX, treeY), Color.White); // draw root node
+            spriteBatch.Draw(nodeCircle, new Vector2(treeX - nodeCircle.Width/2, treeY - nodeCircle.Height/2), Color.White); // draw root node
             DrawNode(rootNode, new Vector2(treeX,treeY), MathHelper.ToRadians(0), MathHelper.ToRadians(360));
-            //DrawLine(spriteBatch, new Vector2(700,300), new Vector2(1061,800));
+            rootNode.MenuPosition = new Point((int)treeX, (int)treeY);
         }
 
         private void DrawNode(Node parentNode, Vector2 centre, double angleStart, double angleRange)
@@ -123,21 +150,30 @@ namespace GameProject
             int iterator = 0;
             foreach (Node node in parentNode.Children)
             {
-                double angle = angleStart + (iterator * angleRange / rootNode.Children.Count);
-                float nodeX = centre.X + (30f * (float)Math.Cos(angle));
-                float nodeY = centre.Y + (30f * (float)Math.Sin(angle));
-                spriteBatch.Draw(linePixel, new Vector2(nodeX, nodeY), Color.White);
+                double angle = angleStart + (iterator * angleRange / parentNode.Children.Count);
+                float nodeX = centre.X + (70f * (float)Math.Cos(angle));
+                float nodeY = centre.Y + (70f * (float)Math.Sin(angle));
+                node.MenuPosition = new Point((int)nodeX, (int)nodeY);
+                
+                if (node.Completed)
+                {
+                    spriteBatch.Draw(nodeCircle, new Vector2(nodeX - nodeCircle.Width / 2, nodeY - nodeCircle.Height / 2), Color.Green);
+                }
+                else
+                {
+                    spriteBatch.Draw(nodeCircle, new Vector2(nodeX - nodeCircle.Width / 2, nodeY - nodeCircle.Height / 2), Color.White);
+                }
+
                 DrawLine(spriteBatch, new Vector2(centre.X, centre.Y), new Vector2(nodeX, nodeY));
                 if (node.Children.Count > 0)
                 {
-                    double aO = (angleRange / rootNode.Children.Count) / 2;
-                    DrawNode(node, new Vector2(nodeX, nodeY), angle - aO, angleRange / rootNode.Children.Count);
+                    DrawNode(node, new Vector2(nodeX, nodeY), angle - ((angleRange / (parentNode.Children.Count)) / 2), angleRange / (parentNode.Children.Count - 1));
                 }
                 iterator++;
             }
         }
 
-        void DrawLine(SpriteBatch spriteBatch, Vector2 start, Vector2 end)
+        private void DrawLine(SpriteBatch spriteBatch, Vector2 start, Vector2 end)
         {
             Vector2 edge = end - start;
             float angle = (float)Math.Atan2(edge.Y, edge.X);

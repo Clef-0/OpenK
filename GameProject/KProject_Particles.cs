@@ -21,9 +21,9 @@ namespace GameProject
 {
     public partial class KProject : Game
     {
-        private void ParticleInit(TextureRegion2D textureRegion)
+        private void ParticleInit(TextureRegion2D textureRegion, TextureRegion2D textureRegion2)
         {
-            pEffect = new ParticleEffect
+            pEffectExplosion = new ParticleEffect
             {
                 Emitters = new[] 
                  { 
@@ -50,6 +50,35 @@ namespace GameProject
                              new LinearGravityModifier { Direction = Vector2.UnitY, Strength = 0f } 
                          }
                      } 
+                 }
+            };
+            pEffectLock = new ParticleEffect
+            {
+                Emitters = new[]
+                 {
+                     new ParticleEmitter(textureRegion2, 5000, TimeSpan.FromSeconds(0.5), Profile.Ring(1f, Profile.CircleRadiation.Out))
+                     {
+                         Parameters = new ParticleReleaseParameters
+                         {
+                             Quantity = 1,
+                             Rotation = new Range<float>(-(float)Math.PI, (float)Math.PI),
+                             Scale = 40.0f
+                         },
+                         Modifiers = new IModifier[]
+                         {
+                             new AgeModifier
+                             {
+                                 Interpolators = new IInterpolator[]
+                                 {
+                                     new ColorInterpolator { InitialColor = new HslColor(1f, 1f, 1f), FinalColor = new HslColor(0f, 0f, 1f) },
+                                     new ScaleInterpolator { StartValue = new Vector2(400.0f, 10.0f), EndValue = new Vector2(0.0f, 400.0f) },
+                                     new OpacityInterpolator { StartValue = 0.01f, EndValue = 255f }
+                                 }
+                             },
+                             new RectangleContainerModifier {  Width = resolutionX, Height = resolutionY },
+                             new LinearGravityModifier { Direction = Vector2.UnitY, Strength = 0f }
+                         }
+                     }
                  }
             };
         }
