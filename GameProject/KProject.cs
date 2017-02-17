@@ -22,7 +22,7 @@ namespace GameProject
 {
     public partial class KProject : Game
     {
-        enum GameState { Menu, Rail, Marathon };
+        enum GameState { Menu, Map, Rail, Marathon };
         GameState currentState = GameState.Menu;
 
         GraphicsDeviceManager graphics;
@@ -229,11 +229,10 @@ namespace GameProject
             switch (currentState)
             {
                 case GameState.Menu:
+                case GameState.Map:
                     MenuUpdate(gameTime);
                     break;
                 case GameState.Rail:
-                    RailGameplayUpdate(gameTime);
-                    break;
                 case GameState.Marathon:
                     RailGameplayUpdate(gameTime);
                     break;
@@ -251,6 +250,9 @@ namespace GameProject
             switch (currentState)
             {
                 case GameState.Menu:
+                    MenuDraw(gameTime);
+                    break;
+                case GameState.Map:
                     MenuDraw(gameTime);
                     break;
                 case GameState.Rail:
@@ -275,8 +277,7 @@ namespace GameProject
                     effect.Projection = projection;
                     effect.EnableDefaultLighting();
                     effect.FogEnabled = true;
-                    HslColor fogColor = new HslColor(currentNodeColor.ToHsl().H, currentNodeColor.ToHsl().S, 0);
-                    effect.FogColor = fogColor.ToRgb().ToVector3();
+                    effect.FogColor = new HslColor(currentNodeColor.ToHsl().H, currentNodeColor.ToHsl().S, 0).ToRgb().ToVector3();
                     effect.FogStart = 50f;
                     effect.FogEnd = 180f;
                 }

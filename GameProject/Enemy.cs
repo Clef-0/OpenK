@@ -17,7 +17,7 @@ using MonoGame.Extended.ViewportAdapters;
 
 namespace GameProject
 {
-    enum EnemyFlightMode { Straight, CurveIn, CurveDown };
+    enum EnemyFlightMode { Straight, CurveOut, CurveDown };
 
     abstract class Enemy
     {
@@ -56,16 +56,16 @@ namespace GameProject
                 curveval *= 2;
             }
 
-            if (FlightMode == EnemyFlightMode.CurveIn)
+            if (FlightMode == EnemyFlightMode.CurveOut)
             {
                 if (Position.X < 0)
                 {
-                    Rotation = new Vector3(Rotation.X - curveval, Rotation.Y - (0.5f * curveval), Rotation.Z);
+                    Rotation = new Vector3(Rotation.X - curveval / 2, Rotation.Y - (0.5f * curveval), Rotation.Z);
                     Position = new Vector3(Position.X - 0.02f, Position.Y + 0.01f, Position.Z);
                 }
                 else
                 {
-                    Rotation = new Vector3(Rotation.X - curveval, Rotation.Y + (0.5f * curveval), Rotation.Z);
+                    Rotation = new Vector3(Rotation.X - curveval / 2, Rotation.Y + (0.5f * curveval), Rotation.Z);
                     Position = new Vector3(Position.X + 0.02f, Position.Y + 0.01f, Position.Z);
                 }
             }
@@ -99,20 +99,9 @@ namespace GameProject
         public Sentinel(Vector3 Position, Vector3 Rotation, EnemyFlightMode FlightMode) : base(Position, Rotation, FlightMode)
         {
             Health = 2;
-            Velocity = 3.5M;
+            Velocity = 4M;
             Model = KProject.sentinelModel;
             Points = 20;
-        }
-    }
-
-    class Colonel : Enemy
-    {
-        public Colonel(Vector3 Position, Vector3 Rotation, EnemyFlightMode FlightMode) : base(Position, Rotation, FlightMode)
-        {
-            Health = 2;
-            Velocity = 4.5M;
-            Model = KProject.colonelModel;
-            Points = 30;
         }
     }
 }

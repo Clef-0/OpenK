@@ -18,14 +18,14 @@ namespace GameProject
         public List<Node> Children { get; set; }
         public NodeType Type { get; set; }
         public NodeMusic Music { get; set; }
-        public Color Color { get; set; }
+        public Color Colour { get; set; }
         public Point MenuPosition { get; set; }
         public string Company { get; set; }
         public string Country { get; set; }
         public string Address { get; set; }
         public bool Completed { get; set; } = false;
-
-        Dictionary<string, string> nbre = new Dictionary<string, string>();
+        public int Score { get; set; }
+        public decimal Percentage { get; set; }
 
         // instance methods
 
@@ -34,16 +34,16 @@ namespace GameProject
             this.Children = new List<Node>();
             HslColor _color = new HslColor();
             _color = new HslColor(KProject.Rnd.Next(0, 256) / 256f, KProject.Rnd.Next(0, 256) / 256f, KProject.Rnd.Next(20, 200) / 256f);
-            this.Color = _color.ToRgb();
+            this.Colour = _color.ToRgb();
             Console.WriteLine("new node instance");
         }
 
-        public void Complete()
+        void Complete()
         {
             this.Completed = true;
         }
 
-        public void CreateChild(NodeType Type, string Company, string Country, string Address)
+        void CreateChild(NodeType Type, string Company, string Country, string Address)
         {
             Node newChild = new Node();
             newChild.Type = Type;

@@ -5,18 +5,13 @@ namespace GameProject
 {
     public partial class KProject : Game
     {
-        public Ray CalculateRay(Vector2 mouseLocation, Matrix view, Matrix projection, Viewport viewport)
+        public float? IntersectDistance(BoundingSphere sphere, Vector2 mouseLocation, Matrix view, Matrix projection, Viewport viewport)
         {
             Vector3 nearPoint = viewport.Unproject(new Vector3(mouseLocation.X, mouseLocation.Y, 0.0f), projection, view, Matrix.Identity);
             Vector3 farPoint = viewport.Unproject(new Vector3(mouseLocation.X, mouseLocation.Y, 1.0f), projection, view, Matrix.Identity);
             Vector3 direction = farPoint - nearPoint;
             direction.Normalize();
-            return new Ray(nearPoint, direction);
-        }
-
-        public float? IntersectDistance(BoundingSphere sphere, Vector2 mouseLocation, Matrix view, Matrix projection, Viewport viewport)
-        {
-            Ray mouseRay = CalculateRay(mouseLocation, view, projection, viewport);
+            Ray mouseRay = new Ray(nearPoint, direction);
             return mouseRay.Intersects(sphere);
         }
 

@@ -63,12 +63,12 @@ namespace GameProject
             
             if (mouseInView && Mouse.GetState().LeftButton == ButtonState.Pressed && oldMouseState.LeftButton == ButtonState.Released)
             {
-                if (hoverNode != null)
+                if (hoverNode != null && currentState == GameState.Map)
                 {
                     currentState = GameState.Rail;
                     startingTime = timer.Now.Ticks;
                     beatsElapsed = 0;
-                    currentNodeColor = hoverNode.Color;
+                    currentNodeColor = hoverNode.Colour;
                     currentNodeMusic = hoverNode.Music;
                     currentNodeScore = 0;
                     currentNodeSpawned = 0;
@@ -84,10 +84,15 @@ namespace GameProject
                     cursorTexture = cursorRail;
                 }
 
-                if (startGame.Contains(mouseX, mouseY))
+                if (startGame.Contains(mouseX, mouseY) && currentState == GameState.Menu)
                 {
+                    currentState = GameState.Map;
                 }
-                else if (resetGame.Contains(mouseX, mouseY))
+                else if (startGame.Contains(mouseX, mouseY) && currentState == GameState.Map)
+                {
+                    currentState = GameState.Menu;
+                }
+                else if (resetGame.Contains(mouseX, mouseY) && currentState == GameState.Menu)
                 {
                     rootNode.Company = NameGenerate(1);
                     rootNode.Country = NameGenerate(2);
@@ -130,24 +135,31 @@ namespace GameProject
         {
             GraphicsDevice.Clear(Color.FromNonPremultiplied(104, 50, 0, 255));
 
-
-            DrawModel(playerModel, world * Matrix.CreateScale(new Vector3(0.6f, 1f, 1f)) * Matrix.CreateRotationY((float)Math.PI + 0.1f) * Matrix.CreateTranslation(new Vector3(0.5f, 2, 0)), view, projection);
-
-
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.Additive, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
 
-            spriteBatch.DrawString(menuFont, "start game", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 - 25), Color.White);
-            spriteBatch.DrawString(menuFont, "reset game", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2), Color.White);
-            spriteBatch.DrawString(menuFont, "marathon mode", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 + 25), Color.White);
-            spriteBatch.DrawString(menuFont, "exit", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 + 50), Color.White);
-
-            spriteBatch.Draw(linePixel, new Rectangle(resolutionX / 2 + 200, resolutionY / 2 + 20, (int)menuFont.MeasureString(hoverCompany).X + 20, 20), null, Color.FromNonPremultiplied(100, 100, 100, 100), 0, new Vector2(0, 0), SpriteEffects.None, 0);
-            spriteBatch.DrawString(menuFont, hoverCompany, new Vector2(resolutionX /2 + 200, resolutionY / 2 + 20), Color.White);
-            spriteBatch.Draw(linePixel, new Rectangle(resolutionX / 2 + 200, resolutionY / 2 + 40, (int)menuFont.MeasureString(hoverCountry).X + 20, 20), null, Color.FromNonPremultiplied(100, 100, 100, 100), 0, new Vector2(0, 0), SpriteEffects.None, 0);
-            spriteBatch.DrawString(menuFont, hoverCountry, new Vector2(resolutionX / 2 + 200, resolutionY / 2 + 40), Color.White);
-            spriteBatch.Draw(linePixel, new Rectangle(resolutionX / 2 + 200, resolutionY / 2 + 60, (int)menuFont.MeasureString(hoverAddress).X + 20, 20), null, Color.FromNonPremultiplied(100, 100, 100, 100), 0, new Vector2(0, 0), SpriteEffects.None, 0);
-            spriteBatch.DrawString(menuFont, hoverAddress, new Vector2(resolutionX / 2 + 200, resolutionY / 2 + 60), Color.White);
-            DrawTree(rootNode);
+            if (currentState == GameState.Menu)
+            {
+                DrawModel(playerModel, world * Matrix.CreateScale(new Vector3(0.6f, 1f, 1f)) * Matrix.CreateRotationY((float)Math.PI + 0.1f) * Matrix.CreateTranslation(new Vector3(0.5f, 2, 0)), view, projection);
+                spriteBatch.DrawString(menuFont, "start game", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 - 25), Color.White);
+                spriteBatch.DrawString(menuFont, "reset game", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2), Color.White);
+                spriteBatch.DrawString(menuFont, "marathon mode", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 + 25), Color.White);
+                spriteBatch.DrawString(menuFont, "exit", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 + 50), Color.White);
+            }
+            else
+            {
+                spriteBatch.DrawString(menuFont, "back", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 - 25), Color.White);
+                if (hoverCompany != "")
+                {
+                    spriteBatch.Draw(linePixel, new Rectangle(resolutionX - 400, resolutionY / 2 + 20, (int)menuFont.MeasureString(hoverCompany).X + 20, 20), null, Color.FromNonPremultiplied(100, 100, 100, 100), 0, new Vector2(0, 0), SpriteEffects.None, 0);
+                    spriteBatch.DrawString(menuFont, hoverCompany, new Vector2(resolutionX - 400, resolutionY / 2 + 20), Color.White);
+                    spriteBatch.Draw(linePixel, new Rectangle(resolutionX - 400, resolutionY / 2 + 40, (int)menuFont.MeasureString(hoverCountry).X + 20, 20), null, Color.FromNonPremultiplied(100, 100, 100, 100), 0, new Vector2(0, 0), SpriteEffects.None, 0);
+                    spriteBatch.DrawString(menuFont, hoverCountry, new Vector2(resolutionX - 400, resolutionY / 2 + 40), Color.White);
+                    spriteBatch.Draw(linePixel, new Rectangle(resolutionX - 400, resolutionY / 2 + 60, (int)menuFont.MeasureString(hoverAddress).X + 20, 20), null, Color.FromNonPremultiplied(100, 100, 100, 100), 0, new Vector2(0, 0), SpriteEffects.None, 0);
+                    spriteBatch.DrawString(menuFont, hoverAddress, new Vector2(resolutionX - 400, resolutionY / 2 + 60), Color.White);
+                }
+               
+                DrawTree(rootNode);
+            }
             spriteBatch.DrawString(scoreFont, "OpenK", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 - 170), Color.White);
 
             spriteBatch.End();

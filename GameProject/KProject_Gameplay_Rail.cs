@@ -46,7 +46,7 @@ namespace GameProject
                     padsInst.Play();
                 }
 
-                // activate music if reached area 2 score
+                // activate music if reached score
 
                 if (beatsElapsed == 32 && currentNodeScore > 100)
                 {
@@ -60,7 +60,7 @@ namespace GameProject
                     bassInst.Play();
                 }
 
-                // activate music if reached area 3 score
+                // activate music if reached score
 
                 if (beatsElapsed == 80 && currentNodeScore > 200)
                 {
@@ -85,6 +85,7 @@ namespace GameProject
             }
 
             bool mouseInView = true;
+
             // mouse stuff
             if ((Mouse.GetState().X >= 0 && Mouse.GetState().X < GraphicsDevice.Viewport.Width) && (Mouse.GetState().Y >= 0 && Mouse.GetState().Y < GraphicsDevice.Viewport.Height))
             {
@@ -118,40 +119,27 @@ namespace GameProject
                 }
                 if (currentNodeScore >= 400 && beatsElapsed % 4 == 0 && currentNodeScore <= 2000)
                 {
-                    enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveIn));
+                    enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveOut));
                     enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveDown));
-                    enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveIn));
+                    enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveOut));
                     enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveDown));
                     currentNodeSpawned += 4;
                 }
                 if (currentNodeScore >= 1000 && beatsElapsed % 4 == 0 && currentNodeScore <= 2000)
                 {
                     enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
-                    enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveIn));
+                    enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveOut));
                     enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
-                    enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveIn));
+                    enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveOut));
                     currentNodeSpawned += 4;
                 }
                 if (currentNodeScore >= 2000 && beatsElapsed % 4 == 0 && currentNodeScore <= 10000)
                 {
-                    enemies.Add(new Sentinel(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveIn));
-                    enemies.Add(new Sentinel(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveIn));
-                    enemies.Add(new Sentinel(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveIn));
+                    enemies.Add(new Sentinel(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveOut));
+                    enemies.Add(new Sentinel(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveOut));
+                    enemies.Add(new Sentinel(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveOut));
                     currentNodeSpawned += 3;
                 }
-
-                //switch (Rnd.Next(1, 2))
-                //{
-                //    case 1:
-                //        enemies.Add(new Drone(new Vector3(5 * offset, 5, -80)));
-                //        break;
-                //    case 2:
-                //        enemies.Add(new Sentinel(new Vector3(Rnd.Next(-10, 10), 5, Rnd.Next(-90, -80))));
-                //        break;
-                //    case 3:
-                //        enemies.Add(new Colonel(new Vector3(Rnd.Next(-10, 10), 5, Rnd.Next(-90, -80))));
-                //        break;
-                //}
             }
 
             List<int> indicesToCull = new List<int>();
@@ -171,7 +159,7 @@ namespace GameProject
                     {
                         if (Intersects(new Vector2(mouseX, mouseY), // mouse position
                             ((Enemy)enemies[i]).Model, // enemy model
-                            ((Enemy)enemies[i]).WorldMatrix, // enemy position
+                            ((Enemy)enemies[i]).WorldMatrix, // enemy matrix for accurate 3D position
                             view,
                             projection,
                             this.GraphicsDevice.Viewport) && ((Enemy)enemies[i]).Health > 0 && lockedEnemies < 8)
