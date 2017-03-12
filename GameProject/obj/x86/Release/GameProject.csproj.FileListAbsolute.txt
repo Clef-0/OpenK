@@ -132,3 +132,99 @@ C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\Content\Fo
 C:\Users\niall\Source\Repos\o2\OpenK\GameProject\bin\Windows\x86\Release\GameProject.exe.config
 C:\Users\niall\Source\Repos\o2\OpenK\GameProject\obj\x86\Release\GameProject.exe
 C:\Users\niall\Source\Repos\o2\OpenK\GameProject\obj\x86\Release\GameProject.pdb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\GameProject.exe.config
+C:\Users\Administrator\Desktop\GameProject\GameProject\obj\x86\Release\GameProject.exe
+C:\Users\Administrator\Desktop\GameProject\GameProject\obj\x86\Release\GameProject.pdb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\3D Models\Env\Terrain.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\3D Models\Player\player.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\3D Models\Test\Cube.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\3D Models\Test\Sentinel.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\3D Models\Test\Ship.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\dubloop.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\dubloop.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\kickloop.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\kickloop.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\snare.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\arps.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\arps.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\boom.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\boom.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\break 1.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\break 1.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\break 2.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\break 2.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\california soul.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\california soul.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\chopped choir.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\chopped choir.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\clank beat.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\clank beat.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\clean bass.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\clean bass.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\clean beat.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\clean beat.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\fear is a mind killer.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\fear is a mind killer.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\gross bass.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\gross bass.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\intro pads.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\intro pads.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\journey pad.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\journey pad.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\killer.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\killer.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\long journey 2.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\long journey 2.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\long journey.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\long journey.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\repeating arp.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\repeating arp.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\sampled break.wma
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Audio\fear\sampled break.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Effects\vignette.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Fonts\Arial12.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Fonts\Bender.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Fonts\ScoreFont.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\Cursor.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\Cursor_Menu.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\EnemyParticle.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\Line.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\Lock.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\NodeCircle.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\ParticleTest.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\Slice.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\SliceLock.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\Vignette.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\WindowButtonExit.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\WindowButtonOptions.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\WindowButtonPlay.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\WindowButtonReset.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Content\Textures\WindowFrame.xnb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\GameProject.exe
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\GameProject.pdb
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\MonoGame.Extended.dll
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\MonoGame.Framework.dll
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.MediaFoundation.dll
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.dll
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.XAudio2.dll
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.DXGI.dll
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.Direct3D11.dll
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.Direct2D1.dll
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.XInput.dll
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.RawInput.dll
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.Direct3D9.dll
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\MonoGame.Framework.xml
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.MediaFoundation.xml
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.xml
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.XAudio2.xml
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.DXGI.xml
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.Direct3D11.xml
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.Direct2D1.xml
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.XInput.xml
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.RawInput.xml
+C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Release\SharpDX.Direct3D9.xml
+C:\Users\Administrator\Desktop\GameProject\GameProject\obj\x86\Release\GameProject.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\GameProject.exe.config
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\obj\x86\Release\GameProject.exe
+C:\Users\Administrator\Source\Repos\OpenK\GameProject\obj\x86\Release\GameProject.pdb

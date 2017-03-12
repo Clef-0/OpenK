@@ -89,7 +89,7 @@ namespace GameProject
         {
             Health = 1;
             Velocity = 2.5M;
-            Model = KProject.droneModel;
+            Model = KProject.DroneModel;
             Points = 10;
         }
     }
@@ -100,7 +100,7 @@ namespace GameProject
         {
             Health = 2;
             Velocity = 4M;
-            Model = KProject.sentinelModel;
+            Model = KProject.SentinelModel;
             Points = 20;
         }
     }

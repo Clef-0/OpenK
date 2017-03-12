@@ -74,11 +74,11 @@ namespace GameProject
         private SoundEffect break1;
 
         // 3D Models
-        private static Model playerModel;
-        public static Model droneModel { get; set; }
-        public static Model sentinelModel { get; set; }
-        public static Model colonelModel { get; set; }
-        private static Model terrainModel;
+        private static Model PlayerModel;
+        public static Model DroneModel { get; set; }
+        public static Model SentinelModel { get; set; }
+        public static Model ColonelModel { get; set; }
+        private static Model TerrainModel;
 
         // Textures
         private Texture2D enemyParticleTexture;
@@ -131,8 +131,10 @@ namespace GameProject
         private int currentNodeScore = 0;
         private int currentNodeSpawned = 0;
         private int currentNodeShot = 0;
+        private Point currentNodeLocation;
+        private bool currentNodeCompleted = false;
 
-
+        private Decimal marathonHue = 0;
 
         public KProject()
         {
@@ -149,15 +151,22 @@ namespace GameProject
 
             ticksPerBeat = ((float)60 / (float)bpm) * (float)10000000;
 
-            rootNode = new Node
+            if (File.Exists("save.dat"))
             {
-                Type = NodeType.Rail,
-                Company = NameGenerate(1),
-                Country = NameGenerate(2),
-                Address = NameGenerate(3)
-            };
+                LoadGame();
+            }
+            else
+            {
+                rootNode = new Node
+                {
+                    Type = NodeType.Rail,
+                    Company = NameGenerate(1),
+                    Country = NameGenerate(2),
+                    Address = NameGenerate(3)
+                };
 
-            CreateChildren(rootNode, 3, 4, 0);
+                CreateChildren(rootNode, 3, 4, 0);
+            }
         }
 
         protected override void Initialize()
@@ -189,11 +198,11 @@ namespace GameProject
             menuFont = Content.Load<SpriteFont>(@"Fonts\Bender");
 
             // 3D Models
-            playerModel = this.Content.Load<Model>(@"3D Models\Player\player");
-            droneModel = this.Content.Load<Model>(@"3D Models\Test\Ship");
-            sentinelModel = this.Content.Load<Model>(@"3D Models\Test\Sentinel");
-            colonelModel = this.Content.Load<Model>(@"3D Models\Test\Cube");
-            terrainModel = this.Content.Load<Model>(@"3D Models\Env\Terrain");
+            PlayerModel = this.Content.Load<Model>(@"3D Models\Player\player");
+            DroneModel = this.Content.Load<Model>(@"3D Models\Test\Ship");
+            SentinelModel = this.Content.Load<Model>(@"3D Models\Test\Sentinel");
+            ColonelModel = this.Content.Load<Model>(@"3D Models\Test\Cube");
+            TerrainModel = this.Content.Load<Model>(@"3D Models\Env\Terrain");
 
             // Textures
             enemyParticleTexture = Content.Load<Texture2D>(@"Textures\Slice");
@@ -283,6 +292,12 @@ namespace GameProject
                 }
                 mesh.Draw();
             }
+        }
+
+        protected override void OnExiting(object sender, EventArgs args)
+        {
+            base.OnExiting(sender, args);
+            SaveGame();
         }
     }
 }

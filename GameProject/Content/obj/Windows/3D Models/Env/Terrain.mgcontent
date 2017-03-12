@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/3D Models/Env/Terrain.obj</SourceFile>
-  <SourceTime>2017-02-10T10:29:40+00:00</SourceTime>
-  <DestFile>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/bin/Windows/3D Models/Env/Terrain.xnb</DestFile>
-  <DestTime>2017-02-11T21:43:20.2866407+00:00</DestTime>
+  <SourceFile>C:/Users/Administrator/Desktop/GameProject/GameProject/Content/3D Models/Env/Terrain.obj</SourceFile>
+  <SourceTime>2017-03-11T22:59:09.1818496+00:00</SourceTime>
+  <DestFile>C:/Users/Administrator/Desktop/GameProject/GameProject/Content/bin/Windows/3D Models/Env/Terrain.xnb</DestFile>
+  <DestTime>2017-03-11T23:00:45.6962982+00:00</DestTime>
   <Importer>OpenAssetImporter</Importer>
   <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
   <Processor>ModelProcessor</Processor>

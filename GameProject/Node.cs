@@ -23,7 +23,7 @@ namespace GameProject
         public string Company { get; set; }
         public string Country { get; set; }
         public string Address { get; set; }
-        public bool Completed { get; set; } = false;
+        public bool Completed { get; set; }
         public int Score { get; set; }
         public decimal Percentage { get; set; }
 
@@ -31,6 +31,7 @@ namespace GameProject
 
         public Node()
         {
+            this.Completed = false;
             this.Children = new List<Node>();
             HslColor _color = new HslColor();
             _color = new HslColor(KProject.Rnd.Next(0, 256) / 256f, KProject.Rnd.Next(0, 256) / 256f, KProject.Rnd.Next(20, 200) / 256f);

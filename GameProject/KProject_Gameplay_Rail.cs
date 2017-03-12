@@ -73,6 +73,20 @@ namespace GameProject
                     soulInst.Volume /= 3f;
                     soulInst.Play();
                 }
+                if ((beatsElapsed + 12) % 32 == 0 && currentNodeScore >= 3000)
+                {
+                    if (currentState == GameState.Marathon)
+                    {
+                        soulInst.Volume /= 3f;
+                        soulInst.Play();
+                    }
+                    else
+                    {
+                        currentNodeCompleted = true;
+                        currentState = GameState.Map;
+                        cursorTexture = cursorMenu;
+                    }
+                }
             }
 
             if (beatsElapsed == 35)
@@ -135,10 +149,81 @@ namespace GameProject
                 }
                 if (currentNodeScore >= 2000 && beatsElapsed % 4 == 0 && currentNodeScore <= 10000)
                 {
-                    enemies.Add(new Sentinel(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveOut));
-                    enemies.Add(new Sentinel(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveOut));
-                    enemies.Add(new Sentinel(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveOut));
-                    currentNodeSpawned += 3;
+                    if (currentState == GameState.Rail)
+                    {
+                        enemies.Add(new Sentinel(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveOut));
+                        enemies.Add(new Sentinel(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveOut));
+                        enemies.Add(new Sentinel(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveOut));
+                        currentNodeSpawned += 3;
+                    }
+                    else if (currentState == GameState.Marathon)
+                    {
+                        int selector = Rnd.Next(1,9);
+                        switch (selector)
+                        {
+                            case 1:
+                            enemies.Add(new Sentinel(new Vector3(-11, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveOut));
+                            enemies.Add(new Sentinel(new Vector3(11, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveOut));
+                            currentNodeSpawned += 2;
+                            break;
+                            case 2:
+                            enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                            enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveOut));
+                            enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                            enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveOut));
+                            currentNodeSpawned += 4;
+                            break;
+                            case 3:
+                            enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                            enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveOut));
+                            enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                            enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveOut));
+                            currentNodeSpawned += 4;
+                            break;
+                            case 4:
+                            enemies.Add(new Drone(new Vector3(-5 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.Straight));
+                            enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                            enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveOut));
+                            currentNodeSpawned += 3;
+                            break;
+                            case 5:
+                            enemies.Add(new Sentinel(new Vector3(-5 * flipMultiplier, 5, -150), new Vector3(0, 0, 0), EnemyFlightMode.CurveOut));
+                            enemies.Add(new Drone(new Vector3(5 * flipMultiplier, -2, -150), new Vector3(0), EnemyFlightMode.Straight));
+                            enemies.Add(new Drone(new Vector3(10 * flipMultiplier, 3, -150), new Vector3(0), EnemyFlightMode.Straight));
+                            enemies.Add(new Drone(new Vector3(15 * flipMultiplier, 8, -150), new Vector3(0), EnemyFlightMode.Straight));
+                            currentNodeSpawned += 4;
+                            break;
+                            case 6:
+                            enemies.Add(new Drone(new Vector3(5, 5, -150), new Vector3(0), EnemyFlightMode.Straight));
+                            enemies.Add(new Drone(new Vector3(5, 0, -150), new Vector3(0), EnemyFlightMode.Straight));
+                            enemies.Add(new Drone(new Vector3(-5, 5, -150), new Vector3(0), EnemyFlightMode.Straight));
+                            enemies.Add(new Drone(new Vector3(-5, 0, -150), new Vector3(0), EnemyFlightMode.Straight));
+                            currentNodeSpawned += 4;
+                            break;
+                            case 7:
+                            enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                            enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveOut));
+                            enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                            enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveOut));
+                            enemies.Add(new Drone(new Vector3(-5 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                            enemies.Add(new Drone(new Vector3(-11 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveOut));
+                            enemies.Add(new Drone(new Vector3(-17 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                            enemies.Add(new Drone(new Vector3(-23 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveOut));
+                            currentNodeSpawned += 8;
+                            break;
+                            case 8:
+                            enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                            enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveOut));
+                            enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                            enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 5, -150), new Vector3(0), EnemyFlightMode.CurveOut));
+                    enemies.Add(new Drone(new Vector3(5 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveOut));
+                    enemies.Add(new Drone(new Vector3(11 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                    enemies.Add(new Drone(new Vector3(17 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveOut));
+                    enemies.Add(new Drone(new Vector3(23 * flipMultiplier, 0, -150), new Vector3(0), EnemyFlightMode.CurveDown));
+                            currentNodeSpawned += 8;
+                            break;
+                        }
+                    }
                 }
             }
 
@@ -191,8 +276,14 @@ namespace GameProject
                                 currentNodeShot += 1;
                             }
                             indicesToCull.Add(i);
-                            //logEntry = i + " offscreen and culled";
-                            //newEntry = true;
+                            
+
+                            // end marathon mode if enemy missed
+                            if (currentState == GameState.Marathon)
+                            {
+                                currentState = GameState.Menu;
+                                cursorTexture = cursorMenu;
+                            }
                         }
                     }
                 }
@@ -262,7 +353,10 @@ namespace GameProject
 
             foreach (int index in indicesToCull)
             {
-                enemies.RemoveAt(index);
+                if (enemies[index] != null)
+                {
+                    enemies.RemoveAt(index);
+                }
             }
 
 
@@ -338,11 +432,11 @@ namespace GameProject
 
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
-            DrawModel(playerModel, world * Matrix.CreateScale(0.5f, 1f, 1f) * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player additive echo
+            DrawModel(PlayerModel, world * Matrix.CreateScale(0.5f, 1f, 1f) * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player additive echo
             
             world.Scale = new Vector3(1);
 
-            DrawModel(terrainModel, world * Matrix.CreateRotationX(MathHelper.ToRadians(-90)) * Matrix.CreateScale(1f, .1f, 1f) * Matrix.CreateTranslation(0f, -80f, -70f + (ticksElapsedSinceBeat) / 2f), view, projection);
+            DrawModel(TerrainModel, world * Matrix.CreateRotationX(MathHelper.ToRadians(-90)) * Matrix.CreateScale(1f, .1f, 1f) * Matrix.CreateTranslation(0f, -80f, -70f + (ticksElapsedSinceBeat) / 2f), view, projection);
 
             foreach (Enemy enemy in enemies)
             {
@@ -363,25 +457,24 @@ namespace GameProject
 
             GraphicsDevice.DepthStencilState = DepthStencilState.None;
             
-            DrawModel(playerModel, world * Matrix.CreateScale(new Vector3(0.5f, 1f, 1f)) * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player overlay
+            DrawModel(PlayerModel, world * Matrix.CreateScale(new Vector3(0.5f, 1f, 1f)) * Matrix.CreateRotationY(-offsetX / 4), view, projection); // draw player overlay
 
             spriteBatch.Draw(cursorTexture, cursorPosition, Color.White);
             spriteBatch.DrawString(scoreFont, currentNodeScore.ToString(), new Vector2(GraphicsDevice.Viewport.Width - scoreFont.MeasureString(currentNodeScore.ToString()).X - 5, GraphicsDevice.Viewport.Height - scoreFont.MeasureString(currentNodeScore.ToString()).Y + 15), Color.White);
 
-
             if (currentState == GameState.Marathon)
             {
-                float newhue = currentNodeColor.ToHsl().H - 0.001f;
-                if (currentNodeColor.ToHsl().H == 0)
+                if (marathonHue <= 1)
                 {
-                    currentNodeColor = new HslColor(70, currentNodeColor.ToHsl().S, currentNodeColor.ToHsl().L).ToRgb();
+                    marathonHue = 370M;
                 }
                 else
                 {
-                    currentNodeColor = new HslColor(newhue, currentNodeColor.ToHsl().S, currentNodeColor.ToHsl().L).ToRgb();
+                    marathonHue -= 1M;
                 }
-                spriteBatch.DrawString(scoreFont, newhue.ToString(), new Vector2(GraphicsDevice.Viewport.Width - scoreFont.MeasureString(currentNodeScore.ToString()).X - 500, GraphicsDevice.Viewport.Height - scoreFont.MeasureString(currentNodeScore.ToString()).Y + 15), Color.White);
+                currentNodeColor = new HslColor((float)marathonHue, 0.1f, currentNodeColor.ToHsl().L).ToRgb();
             }
+
             spriteBatch.End();
         }
     }

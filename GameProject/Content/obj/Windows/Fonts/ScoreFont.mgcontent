@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/Fonts/ScoreFont.spritefont</SourceFile>
-  <SourceTime>2017-02-10T10:30:00+00:00</SourceTime>
-  <DestFile>C:/Users/Administrator/Source/Repos/OpenK/GameProject/Content/bin/Windows/Fonts/ScoreFont.xnb</DestFile>
-  <DestTime>2017-02-11T21:43:18.1451454+00:00</DestTime>
+  <SourceFile>C:/Users/Administrator/Desktop/GameProject/GameProject/Content/Fonts/ScoreFont.spritefont</SourceFile>
+  <SourceTime>2017-03-11T22:59:12.8684938+00:00</SourceTime>
+  <DestFile>C:/Users/Administrator/Desktop/GameProject/GameProject/Content/bin/Windows/Fonts/ScoreFont.xnb</DestFile>
+  <DestTime>2017-03-11T23:00:31.4488491+00:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
