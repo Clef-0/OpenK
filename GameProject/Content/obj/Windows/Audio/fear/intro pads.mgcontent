@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Administrator/Desktop/GameProject/GameProject/Content/Audio/fear/intro pads.wav</SourceFile>
-  <SourceTime>2017-03-11T22:59:10.619291+00:00</SourceTime>
-  <DestFile>C:/Users/Administrator/Desktop/GameProject/GameProject/Content/bin/Windows/Audio/fear/intro pads.xnb</DestFile>
-  <DestTime>2017-03-11T23:00:40.1975811+00:00</DestTime>
+  <SourceFile>N:/Computer Science/Coursework/GameProject/GameProject/Content/Audio/fear/intro pads.wav</SourceFile>
+  <SourceTime>2017-03-13T10:29:05.3547118+00:00</SourceTime>
+  <DestFile>N:/Computer Science/Coursework/GameProject/GameProject/Content/bin/Windows/Audio/fear/intro pads.xnb</DestFile>
+  <DestTime>2017-03-15T10:17:50.362339+00:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

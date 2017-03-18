@@ -11,6 +11,7 @@ namespace GameProject
     enum NodeType { Rail, Cabal, Road, Hell, Net };
     enum NodeMusic { Fear };
 
+    [Serializable()]
     class Node
     {
         // instance properties
@@ -18,8 +19,12 @@ namespace GameProject
         public List<Node> Children { get; set; }
         public NodeType Type { get; set; }
         public NodeMusic Music { get; set; }
-        public Color Colour { get; set; }
-        public Point MenuPosition { get; set; }
+        private int ColourR;
+        private int ColourG;
+        private int ColourB;
+        private int ColourA;
+        private int MenuPositionX;
+        private int MenuPositionY;
         public string Company { get; set; }
         public string Country { get; set; }
         public string Address { get; set; }
@@ -52,6 +57,33 @@ namespace GameProject
             newChild.Country = Country;
             newChild.Address = Address;
             Children.Add(newChild);
+        }
+
+        public Color Colour
+        {
+            get {
+                return new Color(ColourR,ColourG,ColourB,ColourA);
+            }
+            set
+            {
+                ColourR = value.R;
+                ColourG = value.G;
+                ColourB = value.B;
+                ColourA = value.A;
+            }
+        }
+
+        public Point MenuPosition
+        {
+            get
+            {
+                return new Point(MenuPositionX,MenuPositionY);
+            }
+            set
+            {
+                MenuPositionX = value.X;
+                MenuPositionY = value.Y;
+            }
         }
     }
 }

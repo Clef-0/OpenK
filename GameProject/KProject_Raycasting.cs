@@ -5,24 +5,26 @@ namespace GameProject
 {
     public partial class KProject : Game
     {
-        public float? IntersectDistance(BoundingSphere sphere, Vector2 mouseLocation, Matrix view, Matrix projection, Viewport viewport)
+        /// <summary>
+        /// Learned how to do this using RB Whitaker's "Picking" tutorial
+        /// </summary>
+        float? RayDistance(BoundingSphere sphere, Vector2 mouseLocation, Matrix view, Matrix projection, Viewport viewport)
         {
-            Vector3 nearPoint = viewport.Unproject(new Vector3(mouseLocation.X, mouseLocation.Y, 0.0f), projection, view, Matrix.Identity);
-            Vector3 farPoint = viewport.Unproject(new Vector3(mouseLocation.X, mouseLocation.Y, 1.0f), projection, view, Matrix.Identity);
-            Vector3 direction = farPoint - nearPoint;
-            direction.Normalize();
-            Ray mouseRay = new Ray(nearPoint, direction);
-            return mouseRay.Intersects(sphere);
+            Vector3 point1 = viewport.Unproject(new Vector3(mouseLocation.X, mouseLocation.Y, 0.0f), projection, view, Matrix.Identity);
+            Vector3 point2 = viewport.Unproject(new Vector3(mouseLocation.X, mouseLocation.Y, 1.0f), projection, view, Matrix.Identity);
+            Vector3 rayDirection = point2 - point1;
+            rayDirection.Normalize();
+            return new Ray(point1, rayDirection).Intersects(sphere);
         }
 
-        public bool Intersects(Vector2 mouseLocation, Model model, Matrix world, Matrix view, Matrix projection, Viewport viewport)
+        /// <summary>
+        /// Calls RayDistance for every mesh in the model passed to determine if the mouse cursor is over it.
+        /// </summary>
+        bool CheckRay(Vector2 mouseLocation, Model model, Matrix world, Matrix view, Matrix projection, Viewport viewport)
         {
-            for (int index = 0; index < model.Meshes.Count; index++)
+            foreach (ModelMesh mesh in model.Meshes)
             {
-                BoundingSphere sphere = model.Meshes[index].BoundingSphere;
-                sphere = sphere.Transform(world);
-                float? distance = IntersectDistance(sphere, mouseLocation, view, projection, viewport);
-                if (distance != null)
+                if (RayDistance(mesh.BoundingSphere.Transform(world), mouseLocation, view, projection, viewport) != null)
                 {
                     return true;
                 }

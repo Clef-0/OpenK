@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Administrator/Desktop/GameProject/GameProject/Content/Textures/ParticleTest.png</SourceFile>
-  <SourceTime>2017-03-11T22:59:13.6965932+00:00</SourceTime>
-  <DestFile>C:/Users/Administrator/Desktop/GameProject/GameProject/Content/bin/Windows/Textures/ParticleTest.xnb</DestFile>
-  <DestTime>2017-03-11T23:00:30.2456808+00:00</DestTime>
+  <SourceFile>N:/Computer Science/Coursework/GameProject/GameProject/Content/Textures/ParticleTest.png</SourceFile>
+  <SourceTime>2017-03-13T10:29:15.1843772+00:00</SourceTime>
+  <DestFile>N:/Computer Science/Coursework/GameProject/GameProject/Content/bin/Windows/Textures/ParticleTest.xnb</DestFile>
+  <DestTime>2017-03-15T10:17:40.9840434+00:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

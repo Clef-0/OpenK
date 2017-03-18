@@ -21,7 +21,10 @@ namespace GameProject
 {
     public partial class KProject : Game
     {
-        private void ParticleInit(TextureRegion2D textureRegion, TextureRegion2D textureRegion2)
+        /// <summary>
+        /// Initalises global particle emitters with colours and 
+        /// </summary>
+        private void ParticleInitialise(TextureRegion2D textureRegion, TextureRegion2D textureRegion2)
         {
             pEffectExplosion = new ParticleEffect
             {

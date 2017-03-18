@@ -242,7 +242,7 @@ namespace GameProject
 
                     if (mouseInView && newMouseState.LeftButton == ButtonState.Pressed)
                     {
-                        if (Intersects(new Vector2(mouseX, mouseY), // mouse position
+                        if (CheckRay(new Vector2(mouseX, mouseY), // mouse position
                             ((Enemy)enemies[i]).Model, // enemy model
                             ((Enemy)enemies[i]).WorldMatrix, // enemy matrix for accurate 3D position
                             view,

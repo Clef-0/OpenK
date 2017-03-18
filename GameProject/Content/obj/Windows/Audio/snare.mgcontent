@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Administrator/Desktop/GameProject/GameProject/Content/Audio/snare.wav</SourceFile>
-  <SourceTime>2017-03-11T22:59:09.7439429+00:00</SourceTime>
-  <DestFile>C:/Users/Administrator/Desktop/GameProject/GameProject/Content/bin/Windows/Audio/snare.xnb</DestFile>
-  <DestTime>2017-03-11T23:00:45.5084559+00:00</DestTime>
+  <SourceFile>N:/Computer Science/Coursework/GameProject/GameProject/Content/Audio/snare.wav</SourceFile>
+  <SourceTime>2017-03-13T10:28:58.5889348+00:00</SourceTime>
+  <DestFile>N:/Computer Science/Coursework/GameProject/GameProject/Content/bin/Windows/Audio/snare.xnb</DestFile>
+  <DestTime>2017-03-15T10:17:53.1124037+00:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

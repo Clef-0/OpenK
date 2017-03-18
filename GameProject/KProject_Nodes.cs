@@ -139,7 +139,6 @@ namespace GameProject
         {
             int treeX = resolutionX /2;
             int treeY = resolutionY /2;
-            //spriteBatch.DrawString(menuFont, rootNode.Company, new Vector2(700, 300), Color.White);
             spriteBatch.Draw(nodeCircle, new Vector2(treeX - nodeCircle.Width/2, treeY - nodeCircle.Height/2), Color.White); // draw root node
             DrawNode(rootNode, new Vector2(treeX,treeY), MathHelper.ToRadians(0), MathHelper.ToRadians(360));
             rootNode.MenuPosition = new Point((int)treeX, (int)treeY);

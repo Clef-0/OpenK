@@ -220,8 +220,7 @@ namespace GameProject
             vignetteTexture = Content.Load<Texture2D>(@"Textures\Vignette");
             nodeCircle = Content.Load<Texture2D>(@"Textures\NodeCircle");
 
-            ParticleInit(new TextureRegion2D(enemyParticleTexture), new TextureRegion2D(lockParticleTexture));
-            //ParticleInit(new TextureRegion2D(cursorMenu), new TextureRegion2D(frameTexture));
+            ParticleInitialise(new TextureRegion2D(enemyParticleTexture), new TextureRegion2D(lockParticleTexture));
 
             bass = fearBassLoop;
             drum = fearDrumLoop;

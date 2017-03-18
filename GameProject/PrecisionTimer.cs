@@ -5,7 +5,7 @@ using System.Diagnostics;
 namespace GameProject
 {
     /// <summary>
-    /// replacement for DateTime.Now that returns a much more accurate time measurement by adding on a stopwatch value measured from the last DateTime update.
+    /// Replacement for DateTime.Now that returns a much more accurate time measurement by adding on a stopwatch value measured from the last DateTime update.
     /// </summary>
     public class PrecisionTimer
     {

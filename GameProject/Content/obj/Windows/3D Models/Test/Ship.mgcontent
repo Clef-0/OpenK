@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Administrator/Desktop/GameProject/GameProject/Content/3D Models/Test/Ship.obj</SourceFile>
-  <SourceTime>2017-03-11T22:59:09.5721718+00:00</SourceTime>
-  <DestFile>C:/Users/Administrator/Desktop/GameProject/GameProject/Content/bin/Windows/3D Models/Test/Ship.xnb</DestFile>
-  <DestTime>2017-03-11T23:00:31.2765762+00:00</DestTime>
+  <SourceFile>N:/Computer Science/Coursework/GameProject/GameProject/Content/3D Models/Test/Ship.obj</SourceFile>
+  <SourceTime>2017-03-13T10:28:56.6826488+00:00</SourceTime>
+  <DestFile>N:/Computer Science/Coursework/GameProject/GameProject/Content/bin/Windows/3D Models/Test/Ship.xnb</DestFile>
+  <DestTime>2017-03-15T10:17:43.4533147+00:00</DestTime>
   <Importer>OpenAssetImporter</Importer>
   <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
   <Processor>ModelProcessor</Processor>
