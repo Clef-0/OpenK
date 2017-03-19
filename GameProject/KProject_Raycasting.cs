@@ -12,9 +12,9 @@ namespace GameProject
         {
             Vector3 point1 = viewport.Unproject(new Vector3(mouseLocation.X, mouseLocation.Y, 0.0f), projection, view, Matrix.Identity);
             Vector3 point2 = viewport.Unproject(new Vector3(mouseLocation.X, mouseLocation.Y, 1.0f), projection, view, Matrix.Identity);
-            Vector3 rayDirection = point2 - point1;
-            rayDirection.Normalize();
-            return new Ray(point1, rayDirection).Intersects(sphere);
+            Vector3 rayVector = point2 - point1;
+            rayVector.Normalize();
+            return new Ray(point1, rayVector).Intersects(sphere);
         }
 
         /// <summary>
