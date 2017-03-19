@@ -255,7 +255,7 @@ namespace GameProject
             }
 
             List<int> indicesToCull = new List<int>();
-            bool moreThanOneEnemyLocked = false;
+            bool enemyHasBeenLocked = false;
             
             for (int i = enemies.Count() - 1; i >= 0; i--)
             {
@@ -280,17 +280,21 @@ namespace GameProject
                             newEntry = true;
                             ((Enemy)enemies[i]).Injure(1);
                             lockedEnemies += 1;
-                            moreThanOneEnemyLocked = true;
+                            enemyHasBeenLocked = true;
                             Vector3 pos = GraphicsDevice.Viewport.Project(((Enemy)enemies[i]).WorldMatrix.Translation, projection, view, world);
                             pEffectLock.Trigger(new Vector2(pos.X, pos.Y));
                         }
                     }
+                    // if enemy exists
                     if (enemies.ElementAtOrDefault(i) != null)
                     {
+                        // if enemy behind camera
                         if (((Enemy)enemies[i]).Position.Z > 10)
                         {
+                            // if enemy fully destroyed
                             if (((Enemy)enemies[i]).Health == 0)
                             {
+                                // if enemy is drone, remove one lock, if enemy is otherwise, remove two
                                 if (((Enemy)enemies[i]).GetType().Name.ToLower() == "drone")
                                 {
                                     lockedEnemies -= 1;
@@ -299,6 +303,7 @@ namespace GameProject
                                 {
                                     lockedEnemies -= 2;
                                 }
+                                // increase score and shot enemy count
                                 currentNodeScore += ((Enemy)enemies[i]).Points;
                                 currentNodeShot += 1;
                             }
@@ -316,7 +321,9 @@ namespace GameProject
                     }
                 }
             }
-            if (moreThanOneEnemyLocked == true)
+            
+            // instantiate and play if an enemy has been locked
+            if (enemyHasBeenLocked == true)
             {
                 SoundEffectInstance inst = snareDrum.CreateInstance();
                 inst.Volume /= 10f;
@@ -379,6 +386,7 @@ namespace GameProject
                 }
             }
 
+            // remove any indices that have been marked for deletion
             foreach (int index in indicesToCull)
             {
                 if (enemies[index] != null)
