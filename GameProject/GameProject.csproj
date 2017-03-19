@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Enemy.cs" />
     <Compile Include="KProject.cs" />
-    <Compile Include="KProject_Gameplay_Rail.cs" />
+    <Compile Include="KProject_RailGameplay.cs" />
     <Compile Include="KProject_Menu.cs" />
     <Compile Include="KProject_Nodes.cs" />
     <Compile Include="KProject_SaveLoad.cs" />
@@ -64,6 +64,7 @@
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>

@@ -25,6 +25,7 @@ namespace GameProject
         string hoverCompany = "";
         string hoverCountry = "";
         string hoverAddress = "";
+        string hoverPercentage = "";
 
         private void MenuUpdate(GameTime gameTime)
         {
@@ -34,6 +35,7 @@ namespace GameProject
                 Node compNode = FindNode(currentNodeLocation, rootNode);
                 if (compNode != null)
                 {
+                    compNode.Percentage = currentNodePercentage;
                     compNode.Completed = true;
                 }
             }
@@ -56,17 +58,20 @@ namespace GameProject
                 hoverCompany = hoverNode.Company;
                 hoverCountry = hoverNode.Country;
                 hoverAddress = hoverNode.Address;
+                hoverPercentage = Math.Round(hoverNode.Percentage,2).ToString() + "%";
             }
             else
             {
                 hoverCompany = "";
                 hoverCountry = "";
                 hoverAddress = "";
+                hoverPercentage = "";
             }
 
             cursorPosition = new Vector2(mouseX - 37, mouseY - 37);
             projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), resolutionX / resolutionY, 0.1f, 300f);
 
+            // clickable regions
             Rectangle startGame = new Rectangle(new Point(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 - 25), menuFont.MeasureString("start game").ToPoint());
             Rectangle resetGame = new Rectangle(new Point(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2), menuFont.MeasureString("reset game").ToPoint());
             Rectangle marathonMode = new Rectangle(new Point(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 + 25), menuFont.MeasureString("marathon mode").ToPoint());
@@ -84,6 +89,7 @@ namespace GameProject
                     currentNodeScore = 0;
                     currentNodeSpawned = 0;
                     currentNodeShot = 0;
+                    currentNodePercentage = 0;
                     enemies.Clear();
                     lockedEnemies = 0;
                     pEffectExplosion.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
@@ -111,12 +117,12 @@ namespace GameProject
                     rootNode.Company = NameGenerate(1);
                     rootNode.Country = NameGenerate(2);
                     rootNode.Address = NameGenerate(3);
+                    rootNode.Completed = false;
                     rootNode.Children.Clear();
-                    railNodesMade = 0;
                     CreateChildren(rootNode, 3, 4, 0);
                     File.Delete("save.dat");
                 }
-                else if (marathonMode.Contains(mouseX, mouseY))
+                else if (marathonMode.Contains(mouseX, mouseY) && currentState == GameState.Menu)
                 {
                     currentState = GameState.Marathon;
                     startingTime = timer.Now.Ticks;
@@ -137,7 +143,7 @@ namespace GameProject
                     log[4] = "";
                     cursorTexture = cursorRail;
                 }
-                else if (exit.Contains(mouseX, mouseY))
+                else if (exit.Contains(mouseX, mouseY) && currentState == GameState.Menu)
                 {
                     Exit();
                 }
@@ -171,9 +177,11 @@ namespace GameProject
                     spriteBatch.DrawString(menuFont, hoverCountry, new Vector2(resolutionX - 400, resolutionY / 2 + 40), Color.White);
                     spriteBatch.Draw(linePixel, new Rectangle(resolutionX - 400, resolutionY / 2 + 60, (int)menuFont.MeasureString(hoverAddress).X + 20, 20), null, Color.FromNonPremultiplied(100, 100, 100, 100), 0, new Vector2(0, 0), SpriteEffects.None, 0);
                     spriteBatch.DrawString(menuFont, hoverAddress, new Vector2(resolutionX - 400, resolutionY / 2 + 60), Color.White);
+                    spriteBatch.Draw(linePixel, new Rectangle(resolutionX - 400, resolutionY / 2 + 80, (int)menuFont.MeasureString(hoverPercentage).X + 20, 20), null, Color.FromNonPremultiplied(100, 100, 100, 100), 0, new Vector2(0, 0), SpriteEffects.None, 0);
+                    spriteBatch.DrawString(menuFont, hoverPercentage, new Vector2(resolutionX - 400, resolutionY / 2 + 80), Color.White);
                 }
                
-                DrawTree(rootNode);
+                DrawTree();
             }
             spriteBatch.DrawString(scoreFont, "OpenK", new Vector2(GraphicsDevice.Viewport.Width / 5, GraphicsDevice.Viewport.Height / 2 - 170), Color.White);
 

@@ -81,7 +81,6 @@ C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.DXGI
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.XInput.dll
-C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.RawInput.dll
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\MonoGame.Framework.xml
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
@@ -91,7 +90,6 @@ C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.DXGI
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.XInput.xml
-C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.RawInput.xml
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\niall\Source\Repos\OpenK\GameProject\obj\x86\Debug\GameProject.csprojResolveAssemblyReference.cache
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Fonts\ScoreFont.xnb
@@ -460,3 +458,5 @@ C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Debug\Sha
 C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.RawInput.xml
 C:\Users\Administrator\Desktop\GameProject\GameProject\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\Administrator\Desktop\GameProject\GameProject\obj\x86\Debug\GameProject.csprojResolveAssemblyReference.cache
+C:\Users\Niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\3D Models\Test\Sentinel.xnb
+C:\Users\Niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Debug\Content\Textures\NodeCircle.xnb

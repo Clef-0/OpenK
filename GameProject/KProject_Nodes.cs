@@ -27,17 +27,13 @@ namespace GameProject
             int numberOfChildren = Rnd.Next(minChildren, maxChildren + 1);
             for (int i = 0; i < numberOfChildren; i++)
             {
-                if (railNodesMade != railNodesToMake)
+                parent.Children.Add(new Node
                 {
-                    parent.Children.Add(new Node
-                    {
-                        Type = NodeType.Rail,
-                        Company = NameGenerate(1),
-                        Country = NameGenerate(2),
-                        Address = NameGenerate(3)
-                    });
-                    railNodesMade += 1;
-                }
+                    Type = NodeType.Rail,
+                    Company = NameGenerate(1),
+                    Country = NameGenerate(2),
+                    Address = NameGenerate(3)
+                });
             }
 
             foreach (Node child in parent.Children)
@@ -51,12 +47,13 @@ namespace GameProject
                         CreateChildren(child, 1, 2, level + 1);
                         break;
                     default:
+                        // stop creating grandchildren if the parent is level 2
                         break;
                 }
             }
         }
 
-        static string NameGenerate(int type)
+        private string NameGenerate(int type)
         {
             switch (type)
             {
@@ -72,9 +69,6 @@ namespace GameProject
                     string[] nation3 = { "ne", "land", "stan", "thel", "ca", "ia", "tria", "ba", "ch", "lia", "ban", "pa", "ji", "ry", "dia", "el", "bia", "pal", "ria", "wan" };
                     return (RandomStringFromArray(nation1) + RandomStringFromArray(nation2) + RandomStringFromArray(nation3));
                 case 3: //ip
-
-
-
                     int ip1, ip2, ip3, ip4, ip5;
                     do
                     {
@@ -90,7 +84,7 @@ namespace GameProject
             return "";
         }
 
-        static string RandomStringFromArray(string[] strings)
+        private string RandomStringFromArray(string[] strings)
         {
             return strings[Rnd.Next(0, strings.Count())];
         }
@@ -108,25 +102,16 @@ namespace GameProject
                 returnNode = currentNode;
             }
 
-                //check current node's children
-                foreach (Node childNode in currentNode.Children)
-                {
-                    if (childNode.MenuPosition.X + boundSize > location.X && childNode.MenuPosition.X - boundSize < location.X && childNode.MenuPosition.Y + boundSize > location.Y && childNode.MenuPosition.Y - boundSize < location.Y)
-                {
-                    if (!found)
-                    {
-                        found = true;
-                        returnNode = childNode;
-                    }
-
-                }
+            //check current node's children
+            foreach (Node childNode in currentNode.Children)
+            {
                 if (!found)
                 {
-                    Node grandchildNode = FindNode(location, childNode);
-                    if (grandchildNode != null)
+                    Node childReturnNode = FindNode(location, childNode);
+                    if (childReturnNode != null)
                     {
                         found = true;
-                        returnNode = grandchildNode;
+                        returnNode = childReturnNode;
                     }
                 }
             }
@@ -135,16 +120,29 @@ namespace GameProject
         }
 
 
-        private void DrawTree(Node startingNode)
+        private void DrawTree()
         {
             int treeX = resolutionX /2;
             int treeY = resolutionY /2;
-            spriteBatch.Draw(nodeCircle, new Vector2(treeX - nodeCircle.Width/2, treeY - nodeCircle.Height/2), Color.White); // draw root node
-            DrawNode(rootNode, new Vector2(treeX,treeY), MathHelper.ToRadians(0), MathHelper.ToRadians(360));
-            rootNode.MenuPosition = new Point((int)treeX, (int)treeY);
+
+            //draw root node
+            if (rootNode.Completed)
+            {
+                spriteBatch.Draw(nodeCircle, new Vector2(treeX - nodeCircle.Width / 2, treeY - nodeCircle.Height / 2), Color.Green);
+            }
+            else
+            {
+                spriteBatch.Draw(nodeCircle, new Vector2(treeX - nodeCircle.Width / 2, treeY - nodeCircle.Height / 2), Color.White);
+            }
+
+            //draw children of root node
+            DrawNodeChildren(rootNode, new Vector2(treeX,treeY), MathHelper.ToRadians(0), MathHelper.ToRadians(360));
+
+            //store root node position in root node
+            rootNode.MenuPosition = new Point(treeX, treeY);
         }
 
-        private void DrawNode(Node parentNode, Vector2 centre, double angleStart, double angleRange)
+        private void DrawNodeChildren(Node parentNode, Vector2 centre, double angleStart, double angleRange)
         {
             int iterator = 0;
             foreach (Node node in parentNode.Children)
@@ -166,7 +164,7 @@ namespace GameProject
                 DrawLine(spriteBatch, new Vector2(centre.X, centre.Y), new Vector2(nodeX, nodeY));
                 if (node.Children.Count > 0)
                 {
-                    DrawNode(node, new Vector2(nodeX, nodeY), angle - ((angleRange / (parentNode.Children.Count)) / 2), angleRange / (parentNode.Children.Count - 1));
+                    DrawNodeChildren(node, new Vector2(nodeX, nodeY), angle - ((angleRange / parentNode.Children.Count) / 2), angleRange / (parentNode.Children.Count - 1));
                 }
                 iterator++;
             }

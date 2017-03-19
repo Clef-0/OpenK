@@ -10,7 +10,7 @@ namespace GameProject
     public class PrecisionTimer
     {
         private static Stopwatch stopwatch = new Stopwatch();
-        private static DateTime startTime;
+        private static DateTime startTime = DateTime.Now;
 
         static PrecisionTimer()
         {

@@ -77,7 +77,6 @@ C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\SharpDX.DX
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\SharpDX.Direct3D11.dll
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\SharpDX.Direct2D1.dll
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\SharpDX.XInput.dll
-C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\SharpDX.RawInput.dll
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\SharpDX.Direct3D9.dll
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\MonoGame.Framework.xml
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\SharpDX.MediaFoundation.xml
@@ -87,7 +86,6 @@ C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\SharpDX.DX
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\SharpDX.Direct3D11.xml
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\SharpDX.Direct2D1.xml
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\SharpDX.XInput.xml
-C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\SharpDX.RawInput.xml
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\SharpDX.Direct3D9.xml
 C:\Users\niall\Source\Repos\OpenK\GameProject\obj\x86\Release\GameProject.csprojResolveAssemblyReference.cache
 C:\Users\niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\Content\Audio\dubloop.wma
@@ -228,3 +226,9 @@ C:\Users\Administrator\Desktop\GameProject\GameProject\obj\x86\Release\GameProje
 C:\Users\Administrator\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\GameProject.exe.config
 C:\Users\Administrator\Source\Repos\OpenK\GameProject\obj\x86\Release\GameProject.exe
 C:\Users\Administrator\Source\Repos\OpenK\GameProject\obj\x86\Release\GameProject.pdb
+C:\Users\Niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\Content\3D Models\Env\Terrain.xnb
+C:\Users\Niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\Content\3D Models\Test\Sentinel.xnb
+C:\Users\Niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\Content\Audio\snare.xnb
+C:\Users\Niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\Content\Fonts\Bender.xnb
+C:\Users\Niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\Content\Textures\NodeCircle.xnb
+C:\Users\Niall\Source\Repos\OpenK\GameProject\bin\Windows\x86\Release\Content\Textures\SliceLock.xnb

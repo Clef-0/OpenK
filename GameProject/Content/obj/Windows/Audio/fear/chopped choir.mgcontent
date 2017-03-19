@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>N:/Computer Science/Coursework/GameProject/GameProject/Content/Audio/fear/chopped choir.wav</SourceFile>
-  <SourceTime>2017-03-13T10:29:02.182751+00:00</SourceTime>
-  <DestFile>N:/Computer Science/Coursework/GameProject/GameProject/Content/bin/Windows/Audio/fear/chopped choir.xnb</DestFile>
-  <DestTime>2017-03-15T10:17:46.9688741+00:00</DestTime>
+  <SourceFile>C:/Users/Niall/Source/Repos/OpenK/GameProject/Content/Audio/fear/chopped choir.wav</SourceFile>
+  <SourceTime>2017-03-18T13:45:28.7928552+00:00</SourceTime>
+  <DestFile>C:/Users/Niall/Source/Repos/OpenK/GameProject/Content/bin/Windows/Audio/fear/chopped choir.xnb</DestFile>
+  <DestTime>2017-03-18T14:47:21.6739392+00:00</DestTime>
   <Importer>WavImporter</Importer>
-  <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
+  <ImporterTime>2017-03-01T15:05:36+00:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
-  <ProcessorTime>2016-03-30T07:36:08+01:00</ProcessorTime>
+  <ProcessorTime>2017-03-01T15:05:36+00:00</ProcessorTime>
   <Parameters>
     <Key>Quality</Key>
     <Value>Best</Value>

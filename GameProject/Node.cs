@@ -29,7 +29,6 @@ namespace GameProject
         public string Country { get; set; }
         public string Address { get; set; }
         public bool Completed { get; set; }
-        public int Score { get; set; }
         public decimal Percentage { get; set; }
 
         // instance methods
@@ -42,21 +41,6 @@ namespace GameProject
             _color = new HslColor(KProject.Rnd.Next(0, 256) / 256f, KProject.Rnd.Next(0, 256) / 256f, KProject.Rnd.Next(20, 200) / 256f);
             this.Colour = _color.ToRgb();
             Console.WriteLine("new node instance");
-        }
-
-        void Complete()
-        {
-            this.Completed = true;
-        }
-
-        void CreateChild(NodeType Type, string Company, string Country, string Address)
-        {
-            Node newChild = new Node();
-            newChild.Type = Type;
-            newChild.Company = Company;
-            newChild.Country = Country;
-            newChild.Address = Address;
-            Children.Add(newChild);
         }
 
         public Color Colour

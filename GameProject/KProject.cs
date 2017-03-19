@@ -29,6 +29,9 @@ namespace GameProject
         SpriteBatch spriteBatch;
 
         PrecisionTimer timer = new PrecisionTimer();
+        
+        // The following variables are global so as to be accessible by the LoadContent, Update and Draw subroutines
+        // without being passed as parameters.
 
         // render resolution
         private int resolutionX;
@@ -56,22 +59,16 @@ namespace GameProject
         ParticleEffect pEffectLock;
 
         // Audio
+            // track 01: fear (only track implemented)
         private SoundEffect fearDrumLoop;
         private SoundEffect fearBassLoop;
         private SoundEffect fearPadsLoop;
         private SoundEffect fearSoulLoop;
         private SoundEffect fearJourneyLoop;
         private SoundEffect fearBreak1Loop;
-
+            // explosion + lock
         private SoundEffect boomDrum;
         private SoundEffect snareDrum;
-
-        private SoundEffect drum;
-        private SoundEffect bass;
-        private SoundEffect pads;
-        private SoundEffect soul;
-        private SoundEffect journey;
-        private SoundEffect break1;
 
         // 3D Models
         private static Model PlayerModel;
@@ -100,10 +97,7 @@ namespace GameProject
         private SpriteFont scoreFont;
         private SpriteFont menuFont;
 
-        private string[] log = {"", "", "", "", ""};
-        private string logEntry;
-        private bool newEntry = false;
-
+        // global 3D info
         private Matrix world = Matrix.CreateTranslation(new Vector3(0, 0, 0));
         private Matrix view = Matrix.CreateLookAt(new Vector3(0, 4, 10), new Vector3(0, 3, 0), Vector3.UnitY);
         private Matrix projection;
@@ -114,28 +108,8 @@ namespace GameProject
         private float offsetX;
         private float offsetY;
 
-        private int flipMultiplier = -1;
-
         Node rootNode;
-
-        private const int railNodesToMake = 30;
-        private const int cabalNodesToMake = 10;
-        private const int miniNodesToMake = 10;
-        private const int totalNodesToMake = railNodesToMake + cabalNodesToMake + miniNodesToMake;
-        private int railNodesMade = 1;
         
-        private List<object> enemies = new List<object>();
-   
-        private Color currentNodeColor = Color.FromNonPremultiplied(160, 64, 0, 255);
-        private NodeMusic currentNodeMusic = NodeMusic.Fear;
-        private int currentNodeScore = 0;
-        private int currentNodeSpawned = 0;
-        private int currentNodeShot = 0;
-        private Point currentNodeLocation;
-        private bool currentNodeCompleted = false;
-
-        private Decimal marathonHue = 0;
-
         public KProject()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -143,13 +117,12 @@ namespace GameProject
             resolutionY = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             graphics.PreferredBackBufferWidth = resolutionX;
             graphics.PreferredBackBufferHeight = resolutionY;
-            graphics.PreferMultiSampling = true;
             graphics.IsFullScreen = true;
             projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), resolutionX / resolutionY, 0.1f, 3000f);
 
             Content.RootDirectory = "Content";
 
-            ticksPerBeat = ((float)60 / (float)bpm) * (float)10000000;
+            ticksPerBeat = (60f / bpm) * 10000000f;
 
             if (File.Exists("save.dat"))
             {
@@ -174,6 +147,8 @@ namespace GameProject
             base.Initialize();
             mouseX = GraphicsDevice.Viewport.Width / 2;
             mouseY = GraphicsDevice.Viewport.Height / 2;
+
+            ParticleInitialise(new TextureRegion2D(enemyParticleTexture), new TextureRegion2D(lockParticleTexture));
         }
 
         protected override void LoadContent()
@@ -219,9 +194,7 @@ namespace GameProject
             lockTexture = Content.Load<Texture2D>(@"Textures\Lock");
             vignetteTexture = Content.Load<Texture2D>(@"Textures\Vignette");
             nodeCircle = Content.Load<Texture2D>(@"Textures\NodeCircle");
-
-            ParticleInitialise(new TextureRegion2D(enemyParticleTexture), new TextureRegion2D(lockParticleTexture));
-
+            
             bass = fearBassLoop;
             drum = fearDrumLoop;
             pads = fearPadsLoop;
@@ -258,14 +231,10 @@ namespace GameProject
             switch (currentState)
             {
                 case GameState.Menu:
-                    MenuDraw(gameTime);
-                    break;
                 case GameState.Map:
                     MenuDraw(gameTime);
                     break;
                 case GameState.Rail:
-                    RailGameplayDraw(gameTime);
-                    break;
                 case GameState.Marathon:
                     RailGameplayDraw(gameTime);
                     break;

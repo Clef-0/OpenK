@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>N:/Computer Science/Coursework/GameProject/GameProject/Content/3D Models/Test/Ship.obj</SourceFile>
-  <SourceTime>2017-03-13T10:28:56.6826488+00:00</SourceTime>
-  <DestFile>N:/Computer Science/Coursework/GameProject/GameProject/Content/bin/Windows/3D Models/Test/Ship.xnb</DestFile>
-  <DestTime>2017-03-15T10:17:43.4533147+00:00</DestTime>
+  <SourceFile>C:/Users/Niall/Source/Repos/OpenK/GameProject/Content/3D Models/Test/Ship.obj</SourceFile>
+  <SourceTime>2017-03-18T13:45:27.9163795+00:00</SourceTime>
+  <DestFile>C:/Users/Niall/Source/Repos/OpenK/GameProject/Content/bin/Windows/3D Models/Test/Ship.xnb</DestFile>
+  <DestTime>2017-03-18T14:47:20.0826328+00:00</DestTime>
   <Importer>OpenAssetImporter</Importer>
-  <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
+  <ImporterTime>2017-03-01T15:05:36+00:00</ImporterTime>
   <Processor>ModelProcessor</Processor>
-  <ProcessorTime>2016-03-30T07:36:08+01:00</ProcessorTime>
+  <ProcessorTime>2017-03-01T15:05:36+00:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>0,0,0,0</Value>

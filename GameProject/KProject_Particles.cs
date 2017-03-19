@@ -22,7 +22,7 @@ namespace GameProject
     public partial class KProject : Game
     {
         /// <summary>
-        /// Initalises global particle emitters with colours and 
+        /// Initalises global particle emitters
         /// </summary>
         private void ParticleInitialise(TextureRegion2D textureRegion, TextureRegion2D textureRegion2)
         {
