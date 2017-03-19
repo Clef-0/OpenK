@@ -337,7 +337,7 @@ namespace GameProject
             // events to occur only once per beat
             if (acknowledgedBeatsElapsed != beatsElapsed)
             {
-                //acknowledgedBeatsElapsed = beatsElapsed;
+                acknowledgedBeatsElapsed = beatsElapsed;
                 ticksElapsedSinceBeat = 0;
 
                 // destroy enemies on beat
