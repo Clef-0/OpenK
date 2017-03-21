@@ -38,7 +38,7 @@ namespace GameProject
         private int resolutionY;
 
         // timing variables
-        private int bpm = 90;
+        private const int bpm = 90;
         private float ticksPerBeat;
         private int beatsElapsed = 0;
         private int acknowledgedBeatsElapsed = 0;
@@ -112,13 +112,16 @@ namespace GameProject
         
         public KProject()
         {
+            const float nearPlaneDistance = 0.1f;
+            const float farPlaneDistance = 3000f;
+
             graphics = new GraphicsDeviceManager(this);
             resolutionX = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             resolutionY = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             graphics.PreferredBackBufferWidth = resolutionX;
             graphics.PreferredBackBufferHeight = resolutionY;
             graphics.IsFullScreen = true;
-            projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), resolutionX / resolutionY, 0.1f, 3000f);
+            projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), resolutionX / resolutionY, nearPlaneDistance, farPlaneDistance);
 
             Content.RootDirectory = "Content";
 
